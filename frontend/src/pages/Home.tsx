@@ -23,12 +23,11 @@ import {
   FaVolumeMute,
   FaChevronDown,
   FaAccessibleIcon,
-  FaKeyboard,
-  FaEye,
   FaArrowRight,
   FaChartLine,
   FaUsers,
-  FaCode
+  FaCode,
+  FaArrowUp
 } from 'react-icons/fa';
 import { MdSpeed, MdSecurity, MdDesignServices } from 'react-icons/md';
 
@@ -78,6 +77,7 @@ export default function Home() {
   const [fontSize, setFontSize] = useState('normal');
   const [reducedMotion, setReducedMotion] = useState(false);
   const [focusVisible, setFocusVisible] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   
   const { darkMode, toggleTheme } = useContext(ThemeContext);
   const heroRef = useRef(null);
@@ -88,9 +88,14 @@ export default function Home() {
   const isStatsInView = useInView(statsRef);
   const controls = useAnimation();
 
-  // Keyboard navigation state
-  const [focusedElement, setFocusedElement] = useState(-1);
-  const slideButtons = useRef([]);
+  // Scroll to top visibility
+  useEffect(() => {
+    const toggleVisibility = () => {
+      setShowBackToTop(window.pageYOffset > 300);
+    };
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
 
   // Auto-slide functionality with pause/play
   useEffect(() => {
@@ -199,6 +204,13 @@ export default function Home() {
     return `${base} ${fontClass}`;
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className={`min-h-screen ${getThemeClasses()} transition-all duration-500`}>
       {/* Accessibility Controls */}
@@ -209,7 +221,7 @@ export default function Home() {
             className="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
             aria-label="Toggle high contrast mode"
           >
-            <FaEye /> High Contrast
+            <FaAccessibleIcon /> High Contrast
           </button>
           <select
             value={fontSize}
@@ -343,7 +355,7 @@ export default function Home() {
               variants={!reducedMotion ? itemVariants : {}}
               className="mb-6"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#952301]/20 text-[#952301] dark:text-orange-300 border border-[#952301]/30 mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#952301]/0 text-[#fdefeb] dark:text-orange-300 border border-[#e75629] mb-4">
                 <GiLightBulb className="animate-pulse" />
                 <span className="text-sm font-medium">Innovation • Growth • Excellence</span>
               </span>
@@ -360,7 +372,7 @@ export default function Home() {
               }`}
             >
               {slides[currentSlide].title}
-              <span className="block text-2xl md:text-4xl text-[#952301] dark:text-orange-300 mt-2">
+              <span className="block text-2xl md:text-4xl text-[#fc4b15] dark:text-orange-300 mt-2">
                 {slides[currentSlide].subtitle}
               </span>
             </motion.h1>
@@ -421,7 +433,6 @@ export default function Home() {
             {slides.map((slide, index) => (
               <button
                 key={index}
-                ref={(el) => slideButtons.current[index] = el}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-4 h-4 rounded-full transition-all duration-300 ${
                   currentSlide === index 
@@ -626,6 +637,19 @@ export default function Home() {
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {`Currently viewing slide ${currentSlide + 1} of ${slides.length}: ${slides[currentSlide].title}`}
       </div>
+
+      {/* Back to Top Button */}
+      <motion.button
+        onClick={scrollToTop}
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-[#952301] to-[#d87f63] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#952301] focus:ring-offset-2 ${
+          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
+        whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(149, 35, 1, 0.5)' }}
+        whileTap={{ scale: 0.9 }}
+        aria-label="Back to top"
+      >
+        <FaArrowUp size={20} />
+      </motion.button>
     </div>
   );
 }

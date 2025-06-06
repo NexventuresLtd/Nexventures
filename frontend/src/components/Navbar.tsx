@@ -108,7 +108,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
       description: 'Common questions'
     },
     { 
-      to: '/careers', 
+      to: '/career', 
       label: 'Careers', 
       icon: <ShieldCheck size={16} />,
       description: 'Join our team'
@@ -211,7 +211,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
       >
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-2">
-            <Accessibility size={16} className="text-[#952301]" />
+            <Accessibility size={16} className="text-[#ec7e5c]" />
             <span className="font-medium">Accessibility Tools</span>
           </div>
           <div className="flex items-center gap-2">
@@ -257,7 +257,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
             >
               <div>
                 <div className="text-[#952301]">NexVentures</div>
-                <div className="text-xs text-gray-500 font-normal -mt-1">Digital Solutions</div>
+                <div className="text-xs text-gray-500 font-normal -mt-1">Innovation • Growth • Excellence</div>
               </div>
             </Link>
           </motion.div>
@@ -333,154 +333,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-3">
-            Search
-            <div className="relative">
-              <motion.button
-                onClick={toggleSearch}
-                className="p-2 rounded-lg text-gray-600 hover:text-[#952301] hover:bg-[#952301]/5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301]"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Search"
-              >
-                <Search size={20} />
-              </motion.button>
-
-              <AnimatePresence>
-                {showSearch && (
-                  <motion.div
-                    className="absolute top-full right-0 mt-2 w-80 bg-white rounded-xl shadow-xl border border-gray-200 p-4 z-50"
-                    variants={dropdownVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                  >
-                    <form onSubmit={handleSearch}>
-                      <div className="relative">
-                        <Search size={18} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                        <input
-                          type="text"
-                          value={searchQuery}
-                          onChange={(e) => setSearchQuery(e.target.value)}
-                          placeholder="Search our website..."
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#952301] focus:border-transparent"
-                          autoFocus
-                        />
-                      </div>
-                      <div className="mt-3 flex justify-between items-center text-xs text-gray-500">
-                        <span>Press Enter to search</span>
-                        <span>ESC to close</span>
-                      </div>
-                    </form>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Notifications */}
-            <div className="relative">
-              <motion.button
-                onClick={() => setShowNotifications(!showNotifications)}
-                className="relative p-2 rounded-lg text-gray-600 hover:text-[#952301] hover:bg-[#952301]/5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301]"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Notifications"
-              >
-                <Bell size={20} />
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#952301] rounded-full flex items-center justify-center">
-                  <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
-                </span>
-              </motion.button>
-
-              <AnimatePresence>
-                {showNotifications && (
-                  <motion.div
-                    className="absolute top-full right-0 mt-2 w-80 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
-                    variants={dropdownVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                  >
-                    <div className="p-4 bg-gradient-to-r from-[#952301]/5 to-[#611701]/5 border-b border-gray-100">
-                      <h3 className="font-semibold text-[#952301]">Notifications</h3>
-                    </div>
-                    <div className="max-h-64 overflow-y-auto">
-                      {notifications.map((notification) => (
-                        <div
-                          key={notification.id}
-                          className={`p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors ${
-                            notification.unread ? 'bg-blue-50' : ''
-                          }`}
-                        >
-                          <div className="flex justify-between items-start mb-1">
-                            <h4 className="font-medium text-sm">{notification.title}</h4>
-                            {notification.unread && (
-                              <span className="w-2 h-2 bg-[#952301] rounded-full flex-shrink-0"></span>
-                            )}
-                          </div>
-                          <p className="text-xs text-gray-600 mb-1">{notification.message}</p>
-                          <span className="text-xs text-gray-400">{notification.time}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="p-3 bg-gray-50 text-center">
-                      <button className="text-sm text-[#952301] hover:underline">View all notifications</button>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Language Selector */}
-            <div className="relative">
-              <motion.button
-                onClick={() => setShowLanguages(!showLanguages)}
-                className="flex items-center gap-2 p-2 rounded-lg text-gray-600 hover:text-[#952301] hover:bg-[#952301]/5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301]"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Languages size={18} />
-                <ChevronDown size={14} className={`transition-transform ${showLanguages ? 'rotate-180' : ''}`} />
-              </motion.button>
-
-              <AnimatePresence>
-                {showLanguages && (
-                  <motion.div
-                    className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
-                    variants={dropdownVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                  >
-                    {languages.map((lang) => (
-                      <button
-                        key={lang.code}
-                        className="w-full flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:text-[#952301] hover:bg-[#952301]/5 transition-colors"
-                        onClick={() => setShowLanguages(false)}
-                      >
-                        <span className="text-lg">{lang.flag}</span>
-                        {lang.name}
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            {/* Theme Toggle */}
-            <motion.button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg text-gray-600 hover:text-[#952301] hover:bg-[#952301]/5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301]"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Toggle theme"
-            >
-              <motion.div
-                animate={{ rotate: darkMode ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </motion.div>
-            </motion.button>
 
             {/* CTA Button */}
             <motion.div

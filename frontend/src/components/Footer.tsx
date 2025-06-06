@@ -3,10 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Mail, Phone, MapPin, Clock, Facebook, Twitter, Linkedin, 
-  ArrowUp, Instagram, Youtube, Send, Globe, Award, 
-  Users, Star, ChevronUp, ExternalLink, Shield,
-  Accessibility, Volume2, VolumeX, Sun, Moon
-} from 'lucide-react';
+  ArrowUp, Instagram, Send, Globe, Award, Users, Star, ChevronUp, Shield,
+  Accessibility, Volume2, VolumeX } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 interface FooterProps {
@@ -14,7 +12,6 @@ interface FooterProps {
 }
 
 export default function Footer({ className = '' }: FooterProps) {
-  const [isVisible, setIsVisible] = useState(false);
   const [newsletter, setNewsletter] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -117,7 +114,7 @@ export default function Footer({ className = '' }: FooterProps) {
   return (
     <footer 
       ref={ref}
-      className={`relative bg-gradient-to-br from-[#611701] via-[#952301] to-[#611701] text-white overflow-hidden ${
+      className={`relative bg-gradient-to-br from-[#6d1a01] via-[#791d02] to-[#581601] text-white overflow-hidden ${
         highContrast ? 'contrast-125' : ''
       } ${
         fontSize === 'large' ? 'text-lg' : fontSize === 'extra-large' ? 'text-xl' : 'text-sm'
@@ -157,7 +154,7 @@ export default function Footer({ className = '' }: FooterProps) {
 
       {/* Accessibility Controls */}
       <motion.div
-        className="bg-[#611701] py-3 px-5 border-b border-[#952301]/30"
+        className="bg-[#741f05] py-3 px-5 border-b border-[#952301]/10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -277,7 +274,7 @@ export default function Footer({ className = '' }: FooterProps) {
                 </motion.div>
                 <div>
                   <h3 className="text-2xl font-bold text-white">NexVentures Ltd</h3>
-                  <p className="text-[#952301] text-sm font-medium">Digital Innovation Partners</p>
+                  <p className="text-[#faa389] text-sm font-medium">Innovation • Growth • Excellence</p>
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed mb-6">
@@ -298,7 +295,7 @@ export default function Footer({ className = '' }: FooterProps) {
                     whileHover={{ scale: 1.05, backgroundColor: 'rgba(149, 35, 1, 0.1)' }}
                     transition={{ duration: 0.2 }}
                   >
-                    <stat.icon size={20} className="text-[#952301] mx-auto mb-1" />
+                    <stat.icon size={20} className="text-[#ffd8cc] mx-auto mb-1" />
                     <div className="text-white font-bold">{stat.value}</div>
                     <div className="text-gray-400 text-xs">{stat.label}</div>
                   </motion.div>
@@ -306,7 +303,7 @@ export default function Footer({ className = '' }: FooterProps) {
               </div>
 
               <div className="flex items-center gap-2 text-gray-400">
-                <MapPin size={16} className="text-[#952301]" />
+                <MapPin size={16} className="text-[#f3683d]" />
                 <span>Kigali, Rwanda</span>
               </div>
             </motion.div>
@@ -317,7 +314,7 @@ export default function Footer({ className = '' }: FooterProps) {
               variants={itemVariants}
             >
               <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <div className="w-1 h-6 bg-[#952301] rounded-full"></div>
+                <div className="w-1 h-6 bg-[#b9aaa5] rounded-full"></div>
                 Quick Links
               </h4>
               <ul className="space-y-3">
@@ -340,7 +337,7 @@ export default function Footer({ className = '' }: FooterProps) {
                       className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#952301] rounded px-1 py-1"
                       tabIndex={0}
                     >
-                      <ChevronUp size={12} className="rotate-90 text-[#952301] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <ChevronUp size={12} className="rotate-90 text-[#e6d3cd] opacity-0 group-hover:opacity-100 transition-opacity" />
                       {link.label}
                     </Link>
                   </motion.li>
@@ -381,8 +378,8 @@ export default function Footer({ className = '' }: FooterProps) {
                     className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors duration-200"
                     whileHover={{ x: 5 }}
                   >
-                    <div className="w-8 h-8 bg-[#952301]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <contact.icon size={16} className="text-[#952301]" />
+                    <div className="w-8 h-8 bg-[#ddb4a7] rounded-lg flex items-center justify-center flex-shrink-0">
+                      <contact.icon size={16} className="text-[#752007]" />
                     </div>
                     {contact.href ? (
                       <a 
@@ -466,11 +463,11 @@ export default function Footer({ className = '' }: FooterProps) {
               <p>&copy; {new Date().getFullYear()} NexVentures Ltd. All rights reserved.</p>
               <div className="flex items-center gap-4">
                 <span className="flex items-center gap-1">
-                  <Shield size={12} className="text-[#952301]" />
+                  <Shield size={12} className="text-[#f09276]" />
                   SSL Secured
                 </span>
                 <span className="flex items-center gap-1">
-                  <Accessibility size={12} className="text-[#952301]" />
+                  <Accessibility size={12} className="text-[#f3a188]" />
                   WCAG 2.1 AA Compliant
                 </span>
               </div>
