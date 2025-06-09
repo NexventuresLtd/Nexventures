@@ -4,16 +4,14 @@ import { useRef, useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { 
-  Briefcase, Globe, HeartHandshake, Rocket, Users, Star, LineChart, Quote,
+  Briefcase, Globe, HeartHandshake, Rocket, Users, Star, 
   Play, Pause, Volume2, VolumeX, Award, Target, Zap, Shield, 
-  CheckCircle, ArrowRight, Calendar, MapPin, Mail, Phone,
-  Accessibility, Eye, Ear, MousePointer
+  CheckCircle, Calendar, Eye, MousePointer
 } from 'lucide-react';
 import teamImage from '../assets/team.jpg';
 import workCulture from '../assets/work-culture.mp4';
 import innovationGraphic from '../assets/innovation.png';
 import growthChart from '../assets/growth-chart.png';
-import founderImage from '../assets/founder.jpg';
 
 // Animated Counter Component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number, duration?: number, suffix?: string }) => {
@@ -43,7 +41,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number, d
 const AccessibleVideoPlayer = ({ src, poster }: { src: string, poster?: string }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [showControls, setShowControls] = useState(true);
+  const [showControls] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const togglePlay = () => {
@@ -208,30 +206,6 @@ export default function About() {
       title: "Quality Assured",
       description: "Rigorous testing and quality control processes ensure excellence.",
       color: "bg-gradient-to-br from-[#952301] to-[#611701]"
-    }
-  ];
-
-  const testimonials = [
-    {
-      text: "NexVentures transformed our nonprofit with an intuitive platform that tripled our engagement. Their attention to accessibility made our services available to everyone.",
-      author: "Amina Uwimana",
-      role: "NGO Director",
-      company: "Hope Foundation Rwanda",
-      rating: 5
-    },
-    {
-      text: "Their branding and mobile app development gave us the visibility we needed to scale. The team's expertise in modern technologies is outstanding.",
-      author: "Jean Kwizera",
-      role: "Startup Founder",
-      company: "AgriTech Solutions",
-      rating: 5
-    },
-    {
-      text: "Working with NexVentures was a game-changer. They delivered on time, within budget, and exceeded our expectations in every aspect.",
-      author: "Sarah Mitchell",
-      role: "Marketing Director",
-      company: "Global Impact Inc.",
-      rating: 5
     }
   ];
 

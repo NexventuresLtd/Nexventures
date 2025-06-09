@@ -106,11 +106,6 @@ export default function Footer({ className = '' }: FooterProps) {
     }
   };
 
-  const glowEffect = {
-    boxShadow: '0 0 0px rgba(149, 35, 1, 0.3)',
-    transition: 'box-shadow 0.3s ease'
-  };
-
   return (
     <footer 
       ref={ref}

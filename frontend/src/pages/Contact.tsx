@@ -1,5 +1,5 @@
 // src/pages/Contact.tsx
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { motion, useInView } from "framer-motion";

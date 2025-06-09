@@ -17,9 +17,9 @@ export default function Navbar({ className = '' }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearch, setShowSearch] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
-  const [showProfile, setShowProfile] = useState(false);
-  const [showLanguages, setShowLanguages] = useState(false);
+  const [setShowNotifications] = useState(false);
+  const [setShowProfile] = useState(false);
+  const [setShowLanguages] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [highContrast, setHighContrast] = useState(false);
   const [fontSize, setFontSize] = useState('normal');
@@ -37,7 +37,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDarkMode = () => setDarkMode(!darkMode);
-  const toggleSearch = () => setShowSearch(!showSearch);
   const toggleSound = () => setSoundEnabled(!soundEnabled);
   const toggleContrast = () => setHighContrast(!highContrast);
   
@@ -53,9 +52,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
       if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
         setActiveDropdown(null);
         setShowSearch(false);
-        setShowNotifications(false);
-        setShowProfile(false);
-        setShowLanguages(false);
       }
     };
 

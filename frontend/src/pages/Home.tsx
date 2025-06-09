@@ -1,7 +1,7 @@
 // src/pages/Home.tsx
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useContext, useRef, useCallback } from 'react';
+import { useEffect, useState, useContext, useRef} from 'react';
 import bg1 from '../assets/bg1.jpg';
 import bg2 from '../assets/bg2.jpg';
 import bg3 from '../assets/bg3.jpg';
@@ -76,7 +76,7 @@ export default function Home() {
   const [highContrast, setHighContrast] = useState(false);
   const [fontSize, setFontSize] = useState('normal');
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [focusVisible, setFocusVisible] = useState(false);
+  const [focusVisible] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   
   const { darkMode, toggleTheme } = useContext(ThemeContext);
@@ -86,7 +86,6 @@ export default function Home() {
   const isHeroInView = useInView(heroRef);
   const isFeaturesInView = useInView(featuresRef);
   const isStatsInView = useInView(statsRef);
-  const controls = useAnimation();
 
   // Scroll to top visibility
   useEffect(() => {
