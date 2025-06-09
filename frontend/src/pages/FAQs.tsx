@@ -317,7 +317,7 @@ export default function FAQs() {
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -100 }}
-            className="fixed top-16 right-4 z-50 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl border-2 border-orange-800"
+            className="fixed top-16 right-4 z-50 bg-white dark:bg-gray-800 p-4 rounded-lg border-2 border-orange-800"
           >
             <h3 className="font-bold mb-3 flex items-center gap-2">
               <FaAccessibleIcon className="text-orange-800" />
@@ -378,7 +378,7 @@ export default function FAQs() {
         >
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-orange-800 to-red-900 rounded-full mb-6 shadow-2xl"
+            className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-orange-800 to-red-900 rounded-full mb-6"
           >
             <FaQuestionCircle className="text-4xl text-white" />
           </motion.div>
@@ -413,7 +413,7 @@ export default function FAQs() {
         >
           {/* Search and Accessibility */}
           <motion.div variants={itemVariants} className="flex flex-col lg:flex-row gap-4 items-center">
-            <div className="flex-1 flex items-center gap-2 border-2 border-orange-200 dark:border-gray-600 rounded-full px-4 py-3 bg-white dark:bg-gray-800 shadow-lg focus-within:border-orange-500 transition-colors duration-300">
+            <div className="flex-1 flex items-center gap-2 border-2 border-orange-200 dark:border-gray-600 rounded-full px-4 py-3 bg-white dark:bg-gray-800 focus-within:border-orange-500 transition-colors duration-300">
               <FaSearch className="text-orange-600 text-lg" />
               <input
                 ref={searchInputRef}
@@ -438,7 +438,7 @@ export default function FAQs() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setShowAccessibilityPanel(!showAccessibilityPanel)}
-                className="p-3 bg-orange-800 text-white rounded-full hover:bg-orange-700 transition-colors shadow-lg"
+                className="p-3 bg-orange-800 text-white rounded-full hover:bg-orange-700 transition-colors"
                 aria-label="Toggle accessibility options"
               >
                 <FaAccessibleIcon className="text-xl" />
@@ -446,7 +446,7 @@ export default function FAQs() {
               
               <button
                 onClick={exportFAQs}
-                className="p-3 bg-gradient-to-r from-orange-800 to-red-800 text-white rounded-full hover:from-orange-700 hover:to-red-700 transition-colors shadow-lg"
+                className="p-3 bg-gradient-to-r from-orange-800 to-red-800 text-white rounded-full hover:from-orange-700 hover:to-red-700 transition-colors"
                 aria-label="Export FAQs"
               >
                 <FaDownload className="text-xl" />
@@ -464,7 +464,7 @@ export default function FAQs() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                     selectedCategory === category
-                      ? 'bg-gradient-to-r from-orange-800 to-red-800 text-white shadow-lg transform scale-105'
+                      ? 'bg-gradient-to-r from-orange-800 to-red-800 text-white transform scale-105'
                       : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-orange-200 dark:hover:bg-gray-600'
                   }`}
                   aria-pressed={selectedCategory === category}
@@ -523,7 +523,7 @@ export default function FAQs() {
               <motion.div
                 key={section.category}
                 variants={itemVariants}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden"
+                className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden"
               >
                 <div className={`bg-gradient-to-r ${section.color} p-6 text-white`}>
                   <h2 className="text-3xl font-bold flex items-center gap-3">
@@ -540,7 +540,7 @@ export default function FAQs() {
                     <motion.div
                       key={item.id}
                       layout
-                      className="border-2 border-gray-200 dark:border-gray-600 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+                      className="border-2 border-gray-200 dark:border-gray-600 rounded-xl overflow-hidden transition-all duration-300"
                     >
                       <button
                         onClick={() => toggleFAQ(sectionIdx, itemIdx)}
@@ -711,7 +711,7 @@ export default function FAQs() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-orange-800 via-red-800 to-amber-800 text-white rounded-2xl p-8 shadow-2xl"
+          className="mt-16 bg-gradient-to-r from-orange-800 via-red-800 to-amber-800 text-white rounded-2xl p-8"
         >
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-3">
@@ -764,7 +764,7 @@ export default function FAQs() {
           <div className="text-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-white text-orange-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center gap-2 bg-white text-orange-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
             >
               <FaComment />
               Contact Us Now
@@ -779,14 +779,14 @@ export default function FAQs() {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
-          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
             <div className="text-3xl font-bold text-orange-800 mb-2">
               {faqSections.reduce((acc, section) => acc + section.faqs.length, 0)}
             </div>
             <div className="text-gray-600 dark:text-gray-400 font-medium">Total FAQs</div>
           </div>
           
-          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
             <div className="text-3xl font-bold text-red-800 mb-2">
               {faqSections.reduce((acc, section) => 
                 acc + section.faqs.reduce((sectionAcc, faq) => sectionAcc + faq.views, 0), 0
@@ -795,14 +795,14 @@ export default function FAQs() {
             <div className="text-gray-600 dark:text-gray-400 font-medium">Total Views</div>
           </div>
           
-          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
             <div className="text-3xl font-bold text-amber-800 mb-2">
               {categories.length - 1}
             </div>
             <div className="text-gray-600 dark:text-gray-400 font-medium">Categories</div>
           </div>
           
-          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
             <div className="text-3xl font-bold text-orange-600 mb-2">24/7</div>
             <div className="text-gray-600 dark:text-gray-400 font-medium">Available</div>
           </div>
@@ -815,7 +815,7 @@ export default function FAQs() {
           transition={{ delay: 0.9, duration: 0.8 }}
           className="mt-8 text-center"
         >
-          <div className="inline-flex items-center gap-3 bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="inline-flex items-center gap-3 bg-white dark:bg-gray-800 p-4 rounded-full border border-gray-200 dark:border-gray-700">
             <FaLanguage className="text-orange-600 text-xl" />
             <span className="font-medium text-gray-700 dark:text-gray-300">
               Available in: English & Kinyarwanda
@@ -834,7 +834,7 @@ export default function FAQs() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-orange-800 to-red-800 text-white rounded-full shadow-2xl hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-110 z-40"
+        className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-orange-800 to-red-800 text-white rounded-full hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-110 z-40"
         aria-label="Scroll to top"
       >
         <FaChevronUp className="text-xl" />

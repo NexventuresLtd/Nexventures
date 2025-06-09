@@ -242,7 +242,7 @@ export default function Portfolio() {
                 onClick={() => setFilter(cat)}
                 className={`px-6 py-3 rounded-full border-2 font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#af623e] focus:ring-offset-2 ${
                   filter === cat 
-                    ? 'bg-gradient-to-r from-[#ad4e00] to-[#973e02] text-white border-transparent shadow-lg' 
+                    ? 'bg-gradient-to-r from-[#ad4e00] to-[#973e02] text-white border-transparent' 
                     : 'bg-white dark:bg-gray-800 border-[#a84309] text-[#7a2402] dark:text-[#da9a5e] hover:bg-[#b98d64] hover:text-white dark:hover:bg-[#dd9b7d]'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -270,12 +270,12 @@ export default function Portfolio() {
           </div>
 
           {/* View Toggle */}
-          <div className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg">
+          <div className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-full p-2">
             <button
               onClick={() => setCurrentView('grid')}
               className={`p-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#ca764fe8] ${
                 currentView === 'grid' 
-                  ? 'bg-[#b44f0c] text-white shadow-md' 
+                  ? 'bg-[#b44f0c] text-white' 
                   : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
               aria-label="Grid view"
@@ -289,7 +289,7 @@ export default function Portfolio() {
               onClick={() => setCurrentView('list')}
               className={`p-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#cf8c4c] ${
                 currentView === 'list' 
-                  ? 'bg-[#c07c16] text-white shadow-md' 
+                  ? 'bg-[#c07c16] text-white' 
                   : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
               aria-label="List view"
@@ -330,8 +330,8 @@ export default function Portfolio() {
                 className={`
                   group cursor-pointer transform transition-all duration-500 hover:scale-105 focus-within:scale-105
                   ${currentView === 'grid' 
-                    ? 'bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl border border-gray-200 dark:border-gray-700' 
-                    : 'bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col lg:flex-row'
+                    ? 'bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700' 
+                    : 'bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col lg:flex-row'
                   }
                 `}
                 tabIndex={0}
@@ -434,7 +434,7 @@ export default function Portfolio() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
+              className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
               onClick={(e) => e.stopPropagation()}
               tabIndex={-1}
               onKeyDown={(e) => {
@@ -462,7 +462,7 @@ export default function Portfolio() {
                 <img
                   src={filteredProjects[selected].img}
                   alt={`${filteredProjects[selected].title} project showcase`}
-                  className="rounded-xl mb-6 w-full h-64 lg:h-80 object-cover shadow-lg"
+                  className="rounded-xl mb-6 w-full h-64 lg:h-80 object-cover"
                 />
                 
                 <div className="grid lg:grid-cols-2 gap-8">

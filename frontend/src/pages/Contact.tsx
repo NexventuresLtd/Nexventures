@@ -269,9 +269,9 @@ export default function Contact() {
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(149, 35, 1, 0.1)"
+                boxShadow: "0 0px 0px rgba(149, 35, 1, 0.1)"
               }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 p-6 rounded-2xl  transition-all duration-300 border border-gray-200 dark:border-gray-700"
             >
               <div className="flex items-center mb-4">
                 <info.icon className={`text-3xl ${info.color} mr-3`} />
@@ -296,7 +296,7 @@ export default function Contact() {
             initial="hidden"
             animate={isFormInView ? "visible" : "hidden"}
             variants={containerVariants}
-            className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700"
+            className="bg-white dark:bg-gray-800 p-8 rounded-3xl  border border-gray-200 dark:border-gray-700"
           >
             <motion.div variants={itemVariants} className="mb-8">
               <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
@@ -322,7 +322,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 bg-gradient-to-r from-[#952301] to-[#611701] text-white px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300"
+                  className="mt-6 bg-gradient-to-r from-[#952301] to-[#611701] text-white px-6 py-3 rounded-xl  transition-all duration-300"
                 >
                   Send Another Message
                 </button>
@@ -350,7 +350,7 @@ export default function Contact() {
                       errors.name 
                         ? 'border-red-500 focus:border-red-500' 
                         : focusedField === 'name'
-                        ? 'border-[#952301] shadow-lg'
+                        ? 'border-[#952301]'
                         : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
                     }`}
                     placeholder="Enter your full name"
@@ -380,7 +380,7 @@ export default function Contact() {
                       errors.email 
                         ? 'border-red-500 focus:border-red-500' 
                         : focusedField === 'email'
-                        ? 'border-[#952301] shadow-lg'
+                        ? 'border-[#952301]'
                         : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
                     }`}
                     placeholder="Enter your email address"
@@ -409,7 +409,7 @@ export default function Contact() {
                       errors.subject 
                         ? 'border-red-500 focus:border-red-500' 
                         : focusedField === 'subject'
-                        ? 'border-[#952301] shadow-lg'
+                        ? 'border-[#952301]'
                         : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
                     }`}
                     required
@@ -446,7 +446,7 @@ export default function Contact() {
                       errors.message 
                         ? 'border-red-500 focus:border-red-500' 
                         : focusedField === 'message'
-                        ? 'border-[#952301] shadow-lg'
+                        ? 'border-[#952301]'
                         : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
                     }`}
                     placeholder="Tell us about your project or inquiry..."
@@ -469,7 +469,7 @@ export default function Contact() {
                   className={`w-full py-4 px-6 rounded-xl font-semibold text-white text-lg transition-all duration-300 ${
                     loading
                       ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-[#952301] to-[#611701] hover:shadow-2xl hover:shadow-[#952301]/25'
+                      : 'bg-gradient-to-r from-[#952301] to-[#611701]'
                   }`}
                 >
                   {loading ? (
@@ -511,7 +511,7 @@ export default function Contact() {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ x: 10 }}
-                className="flex items-start space-x-4 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+                className="flex items-start space-x-4 p-6 bg-white dark:bg-gray-800 rounded-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
               >
                 <div className="flex-shrink-0">
                   <reason.icon className="text-3xl text-[#952301]" />
@@ -592,7 +592,7 @@ export default function Contact() {
           
           <motion.div 
             variants={itemVariants}
-            className="relative overflow-hidden rounded-3xl shadow-2xl"
+            className="relative overflow-hidden rounded-3xl"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none"></div>
             <iframe
@@ -632,7 +632,7 @@ export default function Contact() {
                 href="tel:+250795022500"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#952301] px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center"
+                className="bg-white text-[#952301] px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center"
               >
                 <FaPhone className="mr-2" />
                 Call Us Now

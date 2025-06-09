@@ -214,7 +214,7 @@ export default function Home() {
   return (
     <div className={`min-h-screen ${getThemeClasses()} transition-all duration-500`}>
       {/* Accessibility Controls */}
-      <div className={`fixed top-2 left-2 z-50 ${accessibilityMode ? 'block' : 'sr-only'} bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg border`}>
+      <div className={`fixed top-2 left-2 z-50 ${accessibilityMode ? 'block' : 'sr-only'} bg-white dark:bg-gray-800 p-2 rounded-lg border`}>
         <div className="flex flex-col gap-2 text-sm">
           <button
             onClick={() => setHighContrast(!highContrast)}
@@ -368,7 +368,7 @@ export default function Home() {
                 fontSize === 'small' ? 'text-3xl md:text-5xl' : 
                 'text-4xl md:text-7xl'
               } ${
-                highContrast ? 'text-white' : 'text-white drop-shadow-2xl'
+                highContrast ? 'text-white' : 'text-white '
               }`}
             >
               {slides[currentSlide].title}
@@ -384,7 +384,7 @@ export default function Home() {
                 fontSize === 'small' ? 'text-base md:text-lg' : 
                 'text-lg md:text-2xl'
               } ${
-                highContrast ? 'text-gray-200' : 'text-gray-100 drop-shadow-lg'
+                highContrast ? 'text-gray-200' : 'text-gray-100'
               }`}
             >
               {slides[currentSlide].description}
@@ -399,7 +399,7 @@ export default function Home() {
                 className={`group inline-flex items-center gap-3 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
                   highContrast 
                     ? 'bg-white text-black hover:bg-gray-200' 
-                    : 'bg-gradient-to-r from-[#952301] to-[#611701] hover:from-[#611701] hover:to-[#952301] text-white shadow-2xl hover:shadow-[#952301]/50'
+                    : 'bg-gradient-to-r from-[#952301] to-[#611701] hover:from-[#611701] hover:to-[#952301] text-white'
                 } ${
                   focusVisible ? 'ring-4 ring-orange-500' : ''
                 }`}
@@ -436,7 +436,7 @@ export default function Home() {
                 onClick={() => setCurrentSlide(index)}
                 className={`w-4 h-4 rounded-full transition-all duration-300 ${
                   currentSlide === index 
-                    ? (highContrast ? 'bg-white scale-125' : 'bg-[#952301] scale-125 shadow-lg') 
+                    ? (highContrast ? 'bg-white scale-125' : 'bg-[#952301] scale-125') 
                     : (highContrast ? 'bg-gray-500' : 'bg-white/50 hover:bg-white/70')
                 } ${
                   focusVisible ? 'ring-2 ring-orange-500 ring-offset-2' : ''
@@ -523,7 +523,7 @@ export default function Home() {
                 className={`group p-8 rounded-2xl transition-all duration-300 ${
                   highContrast 
                     ? 'bg-black border-2 border-white hover:border-gray-300' 
-                    : 'bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl border border-gray-200 dark:border-gray-700 hover:border-[#952301]/30'
+                    : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-[#952301]/30'
                 }`}
                 role="article"
                 aria-labelledby={`feature-${index}-title`}
@@ -641,10 +641,10 @@ export default function Home() {
       {/* Back to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-[#952301] to-[#d87f63] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#952301] focus:ring-offset-2 ${
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-[#952301] to-[#d87f63] text-white rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#952301] focus:ring-offset-2 ${
           showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
-        whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(149, 35, 1, 0.5)' }}
+        whileHover={{ scale: 1.1, boxShadow: '0 0 0px rgba(149, 35, 1, 0.5)' }}
         whileTap={{ scale: 0.9 }}
         aria-label="Back to top"
       >

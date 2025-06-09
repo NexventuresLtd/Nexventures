@@ -384,7 +384,7 @@ export default function Blog() {
                   <motion.div
                     key={post.id}
                     whileHover={{ scale: 1.02 }}
-                    className="flex-shrink-0 w-80 md:w-96 bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                    className="flex-shrink-0 w-80 md:w-96 bg-white dark:bg-gray-800 rounded-xl overflow-hidden"
                   >
                     <div className="relative">
                       <img
@@ -612,7 +612,7 @@ export default function Blog() {
                   key={post.id}
                   variants={itemVariants}
                   layout
-                  className={`group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${
+                  className={`group bg-white dark:bg-gray-800 rounded-xl overflow-hidden transition-all duration-300 ${
                     viewMode === "list" ? "flex flex-col md:flex-row" : ""
                   }`}
                   whileHover={{ y: -5 }}
@@ -779,7 +779,7 @@ export default function Blog() {
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg"
+                          className="px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white rounded-full text-sm font-medium transition-all"
                         >
                           Read More
                         </motion.button>
@@ -937,7 +937,7 @@ export default function Blog() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     type="submit"
-                    className="px-8 py-4 bg-white text-orange-700 rounded-full font-semibold hover:bg-orange-50 transition-all shadow-lg hover:shadow-xl"
+                    className="px-8 py-4 bg-white text-orange-700 rounded-full font-semibold hover:bg-orange-50 transition-all"
                   >
                     Subscribe
                   </motion.button>
@@ -997,8 +997,8 @@ export default function Blog() {
                 onClick={() => toggleTag(tag)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedTags.includes(tag)
-                    ? "bg-orange-600 text-white shadow-lg"
-                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-orange-200 dark:border-gray-600 hover:border-orange-500 dark:hover:border-orange-400 hover:shadow-md"
+                    ? "bg-orange-600 text-white"
+                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-orange-200 dark:border-gray-600 hover:border-orange-500 dark:hover:border-orange-400 "
                 }`}
               >
                 {tag}
@@ -1023,7 +1023,7 @@ export default function Blog() {
             <motion.div
               key={idx}
               whileHover={{ scale: 1.05 }}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg border-2 border-orange-100 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all"
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center border-2 border-orange-100 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600 transition-all"
             >
               <div className="text-3xl mb-2">{stat.icon}</div>
               <div className="text-2xl font-bold text-orange-900 dark:text-orange-100 mb-1">
@@ -1046,7 +1046,7 @@ export default function Blog() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 w-12 h-12 bg-orange-600 text-white rounded-full shadow-lg hover:bg-orange-700 transition-all z-50 flex items-center justify-center"
+        className="fixed bottom-6 right-6 w-12 h-12 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-all z-50 flex items-center justify-center"
         aria-label="Scroll to top"
       >
         ↑

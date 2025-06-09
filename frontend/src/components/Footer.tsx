@@ -107,7 +107,7 @@ export default function Footer({ className = '' }: FooterProps) {
   };
 
   const glowEffect = {
-    boxShadow: '0 0 20px rgba(149, 35, 1, 0.3)',
+    boxShadow: '0 0 0px rgba(149, 35, 1, 0.3)',
     transition: 'box-shadow 0.3s ease'
   };
 
@@ -482,10 +482,10 @@ export default function Footer({ className = '' }: FooterProps) {
       {/* Back to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-[#952301] to-[#d87f63] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#952301] focus:ring-offset-2 ${
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-[#952301] to-[#d87f63] text-white rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#952301] focus:ring-offset-2 ${
           showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
-        whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(149, 35, 1, 0.5)' }}
+        whileHover={{ scale: 1.1, boxShadow: '0 0 0px rgba(149, 35, 1, 0.5)' }}
         whileTap={{ scale: 0.9 }}
         aria-label="Back to top"
       >

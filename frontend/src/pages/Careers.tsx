@@ -345,7 +345,7 @@ export default function Careers() {
       <motion.div 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-20 right-4 z-50 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 space-y-2"
+        className="fixed top-20 right-4 z-50 bg-white dark:bg-gray-800 rounded-lg p-4 space-y-2"
         role="region"
         aria-label="Accessibility Controls"
       >
@@ -410,7 +410,7 @@ export default function Careers() {
                 href="#openings"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                className="px-8 py-4 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1"
                 aria-label="View open positions"
               >
                 <FaBriefcase className="inline mr-2" />
@@ -478,7 +478,7 @@ export default function Careers() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="text-center p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="text-center p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm transition-all duration-300"
               >
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[#952301] to-[#611701] rounded-full flex items-center justify-center">
                   <value.icon className="text-2xl text-white" />
@@ -502,7 +502,7 @@ export default function Careers() {
             Life at NexVentures
           </h2>
           
-          <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden">
             <video
               ref={videoRef}
               className="w-full h-auto"
@@ -583,7 +583,7 @@ export default function Careers() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer border border-gray-200/50 dark:border-gray-700/50"
+                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 transition-all duration-300 cursor-pointer border border-gray-200/50 dark:border-gray-700/50"
                 onClick={() => setSelectedJob(idx)}
                 role="button"
                 tabIndex={0}
@@ -626,7 +626,7 @@ export default function Careers() {
                   )}
                 </div>
                 
-                <button className="w-full px-6 py-3 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <button className="w-full px-6 py-3 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1">
                   View Details & Apply
                 </button>
               </motion.div>
@@ -713,7 +713,7 @@ export default function Careers() {
                     
                     <a
                       href={`mailto:careers@nexventures.rw?subject=Application for ${encodeURIComponent(openings[selectedJob].title)}`}
-                      className="block w-full text-center px-8 py-4 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                      className="block w-full text-center px-8 py-4 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1"
                     >
                       Apply Now
                     </a>
@@ -752,7 +752,7 @@ export default function Careers() {
                     <motion.div
                       key={i}
                       whileHover={{ y: -5, scale: 1.02 }}
-                      className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 transition-all duration-300"
                     >
                       <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-[#952301] to-[#611701] rounded-lg flex items-center justify-center">
                         <perk.icon className="text-white text-xl" />
@@ -790,14 +790,14 @@ export default function Careers() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl"
+                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 md:p-12"
               >
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="relative">
                     <img 
                       src={testimonials[currentTestimonial].image} 
                       alt={`${testimonials[currentTestimonial].name} - ${testimonials[currentTestimonial].role}`}
-                      className="w-32 h-32 rounded-full object-cover shadow-xl ring-4 ring-[#952301]/20"
+                      className="w-32 h-32 rounded-full object-cover ring-4 ring-[#952301]/20"
                       width={128}
                       height={128}
                     />
@@ -891,7 +891,7 @@ export default function Careers() {
                         ? 'bg-green-500 text-white' 
                         : uploadStatus === 'error'
                         ? 'bg-red-500 text-white'
-                        : 'bg-gradient-to-r from-[#952301] to-[#611701] text-white hover:shadow-lg'
+                        : 'bg-gradient-to-r from-[#952301] to-[#611701] text-white'
                     }`}
                   >
                     {uploadStatus === 'uploading' && (
@@ -938,7 +938,7 @@ export default function Careers() {
         >
           <motion.div 
             variants={itemVariants}
-            className="text-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl"
+            className="text-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 md:p-12"
           >
             <h3 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
               Ready to Start Your Journey?
@@ -951,7 +951,7 @@ export default function Careers() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="mailto:careers@nexventures.rw"
-                className="px-8 py-4 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                className="px-8 py-4 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1"
               >
                 <FaEnvelopeOpenText className="inline mr-2" />
                 Get in Touch

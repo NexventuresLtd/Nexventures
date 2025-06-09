@@ -70,7 +70,7 @@ const AccessibleVideoPlayer = ({ src, poster }: { src: string, poster?: string }
         ref={videoRef}
         src={src}
         poster={poster}
-        className="rounded-xl shadow-lg w-full max-w-4xl mx-auto"
+        className="rounded-xl w-full max-w-4xl mx-auto"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         aria-label="NexVentures work culture video"
@@ -241,7 +241,7 @@ export default function About() {
     } ${fontSize === 'large' ? 'text-lg' : fontSize === 'xl' ? 'text-xl' : ''}`}>
       
       {/* Accessibility Toolbar */}
-      <div className="fixed top-20 right-4 z-50 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 space-y-2">
+      <div className="fixed top-20 right-4 z-50 bg-white dark:bg-gray-800 rounded-lg p-2 space-y-2">
         <button
           onClick={() => setHighContrast(!highContrast)}
           className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
@@ -338,7 +338,7 @@ export default function About() {
                 scale: reducedMotion ? 1 : 1.05, 
                 rotateY: reducedMotion ? 0 : 5 
               }}
-              className={`relative group p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden`}
+              className={`relative group p-8 rounded-2xl bg-white dark:bg-gray-800 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden`}
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br from-${item.color}/10 to-transparent dark:from-${item.color}/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
@@ -431,7 +431,7 @@ export default function About() {
                   scale: reducedMotion ? 1 : 1.02,
                   rotateX: reducedMotion ? 0 : 5
                 }}
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 transition-all duration-500 overflow-hidden"
               >
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#611701]/10 to-[#952301]/10 dark:from-[#611701]/20 dark:to-[#952301]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -475,7 +475,7 @@ export default function About() {
             variants={itemVariants}
             className="relative group"
           >
-            <div className="overflow-hidden rounded-2xl shadow-2xl">
+            <div className="overflow-hidden rounded-2xl">
               <motion.img 
                 src={teamImage} 
                 alt="NexVentures diverse team of developers, designers, and project managers working collaboratively in a modern office space"
@@ -556,7 +556,7 @@ export default function About() {
                 <img 
                   src={innovationGraphic} 
                   alt="Innovation workflow diagram showing our design thinking process from ideation to implementation"
-                  className="relative rounded-2xl shadow-2xl w-full h-auto transition-transform duration-500 group-hover:scale-105" 
+                  className="relative rounded-2xl w-full h-auto transition-transform duration-500 group-hover:scale-105" 
                 />
               </div>
             </motion.div>
@@ -577,7 +577,7 @@ export default function About() {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                    className="flex items-start space-x-4 p-4 bg-white dark:bg-gray-800 rounded-xl  duration-300"
                     whileHover={{ x: reducedMotion ? 0 : 10 }}
                   >
                     <div className="bg-gradient-to-br from-[#611701] to-[#952301] p-3 rounded-lg">
@@ -622,7 +622,7 @@ export default function About() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#952301] to-[#611701] rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-            <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-2xl">
+            <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-8">
               <img 
                 src={growthChart} 
                 alt="Growth chart showing NexVentures' progress over 5 years including client growth, revenue increase, and team expansion"

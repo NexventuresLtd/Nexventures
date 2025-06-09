@@ -191,8 +191,8 @@ export default function Navbar({ className = '' }: NavbarProps) {
       ref={navbarRef}
       className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-lg ${
         isScrolled 
-          ? `bg-white/80 ${darkMode ? 'dark:bg-[#611701]/90' : ''} shadow-lg border-b border-[#952301]/10`
-          : `bg-white ${darkMode ? 'dark:bg-[#611701]' : ''} shadow-md`
+          ? `bg-white/80 ${darkMode ? 'dark:bg-[#611701]/90' : ''}  border-b border-[#952301]/10`
+          : `bg-white ${darkMode ? 'dark:bg-[#611701]' : ''} `
       } ${
         highContrast ? 'contrast-125' : ''
       } ${
@@ -296,7 +296,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                   <AnimatePresence>
                     {item.dropdown && activeDropdown === item.to && (
                       <motion.div
-                        className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
+                        className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-gray-200 overflow-hidden z-50"
                         variants={dropdownVariants}
                         initial="hidden"
                         animate="visible"
@@ -341,7 +341,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
             >
               <Link
                 to="/contact"
-                className="px-6 py-2 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] flex items-center gap-2"
+                className="px-6 py-2 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] flex items-center gap-2"
               >
                 Get Started
                 <ArrowRight size={16} />

@@ -157,7 +157,7 @@ const VideoPlayer = () => {
   };
 
   return (
-    <div className="relative group bg-black rounded-xl overflow-hidden shadow-2xl">
+    <div className="relative group bg-black rounded-xl overflow-hidden">
       <video
         ref={videoRef}
         src={serviceVideo}
@@ -370,7 +370,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 
@@ -479,7 +479,7 @@ export default function Services() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={isBenefitsInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
-                  className="flex items-start space-x-4 p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition-all duration-300 group"
+                  className="flex items-start space-x-4 p-6 rounded-2xl bg-gray-50 dark:bg-gray-800  transition-all duration-300 group"
                 >
                   <div className="p-3 rounded-xl bg-gradient-to-br from-[#952301] to-[#611701] text-white group-hover:scale-110 transition-transform duration-300">
                     {benefit.icon}
@@ -506,7 +506,7 @@ export default function Services() {
               <img 
                 src={serviceImage} 
                 alt="Professional team collaboration and innovative solutions" 
-                className="relative rounded-2xl shadow-2xl w-full transform group-hover:scale-105 transition-transform duration-500"
+                className="relative rounded-2xl w-full transform group-hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           </div>
@@ -609,7 +609,7 @@ export default function Services() {
           border-radius: 50%;
           cursor: pointer;
           border: 2px solid white;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+          box-shadow: 0 0px 0px rgba(0,0,0,0.3);
         }
         
         .slider-thumb::-moz-range-thumb {
@@ -619,7 +619,7 @@ export default function Services() {
           border-radius: 50%;
           cursor: pointer;
           border: 2px solid white;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+          box-shadow: 0 0px 0px rgba(0,0,0,0.3);
         }
       `}</style>
     </div>
