@@ -16,10 +16,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
   const [darkMode, setDarkMode] = useState(false); // Using memory storage instead of localStorage
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [showSearch, setShowSearch] = useState(false);
-  const [setShowNotifications] = useState(false);
-  const [setShowProfile] = useState(false);
-  const [setShowLanguages] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [highContrast, setHighContrast] = useState(false);
   const [fontSize, setFontSize] = useState('normal');
@@ -51,7 +47,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
     const handleClickOutside = (event: MouseEvent) => {
       if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
         setActiveDropdown(null);
-        setShowSearch(false);
       }
     };
 
@@ -123,7 +118,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
     if (searchQuery.trim()) {
       navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
       setSearchQuery('');
-      setShowSearch(false);
     }
   };
 
