@@ -227,7 +227,6 @@ export default function Footer({ className = '' }: FooterProps) {
                   type="submit"
                   disabled={isSubmitting}
                   className="px-6 py-3 bg-[#952301] hover:bg-[#611701] rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#952301] focus:ring-offset-2 focus:ring-offset-[#611701] disabled:opacity-50"
-                  whileHover={glowEffect}
                   whileTap={{ scale: 0.95 }}
                 >
                   {isSubmitting ? (

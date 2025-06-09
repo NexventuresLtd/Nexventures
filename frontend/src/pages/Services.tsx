@@ -599,29 +599,6 @@ export default function Services() {
       </section>
 
       <Footer />
-
-      <style jsx>{`
-        .slider-thumb::-webkit-slider-thumb {
-          appearance: none;
-          width: 20px;
-          height: 20px;
-          background: #952301;
-          border-radius: 50%;
-          cursor: pointer;
-          border: 2px solid white;
-          box-shadow: 0 0px 0px rgba(0,0,0,0.3);
-        }
-        
-        .slider-thumb::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
-          background: #952301;
-          border-radius: 50%;
-          cursor: pointer;
-          border: 2px solid white;
-          box-shadow: 0 0px 0px rgba(0,0,0,0.3);
-        }
-      `}</style>
     </div>
   );
 }

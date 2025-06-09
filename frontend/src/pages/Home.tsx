@@ -112,60 +112,16 @@ export default function Home() {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setReducedMotion(mediaQuery.matches);
-    
-    const handleChange = (e) => setReducedMotion(e.matches);
-    mediaQuery.addEventListener('change', handleChange);
-    
-    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
-
-  // Keyboard navigation
-  const handleKeyDown = useCallback((e) => {
-    if (!accessibilityMode) return;
-    
-    switch (e.key) {
-      case 'ArrowLeft':
-        e.preventDefault();
-        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-        break;
-      case 'ArrowRight':
-        e.preventDefault();
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-        break;
-      case ' ':
-        e.preventDefault();
-        setIsPlaying(!isPlaying);
-        break;
-      case 'Tab':
-        setFocusVisible(true);
-        break;
-      case 'Escape':
-        setFocusVisible(false);
-        break;
-    }
-  }, [accessibilityMode, isPlaying]);
-
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
 
   // Animation variants
   const slideVariants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
-    }),
+
     center: {
       zIndex: 1,
       x: 0,
       opacity: 1
     },
-    exit: (direction) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    })
   };
 
   const containerVariants = {
@@ -250,7 +206,7 @@ export default function Home() {
         role="banner"
         aria-label="Hero section with sliding background images"
       >
-        {/* Background Slides */}
+        {/* Background Slides with Blur Overlay */}
         <div className="absolute inset-0">
           {slides.map((slide, index) => (
             <motion.div
@@ -264,13 +220,14 @@ export default function Home() {
                 backgroundImage: `url(${slide.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundAttachment: 'fixed'
+                backgroundAttachment: 'fixed',
+                filter: 'blur(5px) brightness(0.4)'
               }}
             />
           ))}
         </div>
 
-        {/* Overlay */}
+        {/* Dark Overlay */}
         <div 
           className={`absolute inset-0 ${
             highContrast 
@@ -349,7 +306,7 @@ export default function Home() {
             variants={!reducedMotion ? containerVariants : {}}
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
-            className="max-w-5xl mx-auto"
+            className="max-w-5xl mx-auto w-full px-4"
           >
             <motion.div
               variants={!reducedMotion ? itemVariants : {}}
@@ -368,7 +325,7 @@ export default function Home() {
                 fontSize === 'small' ? 'text-3xl md:text-5xl' : 
                 'text-4xl md:text-7xl'
               } ${
-                highContrast ? 'text-white' : 'text-white '
+                highContrast ? 'text-white' : 'text-white'
               }`}
             >
               {slides[currentSlide].title}
@@ -480,7 +437,7 @@ export default function Home() {
             variants={!reducedMotion ? containerVariants : {}}
             initial="hidden"
             animate={isFeaturesInView ? "visible" : "hidden"}
-            className="text-center mb-16"
+            className="text-center mb-16 px-4"
           >
             <motion.h2
               variants={!reducedMotion ? itemVariants : {}}
@@ -513,7 +470,7 @@ export default function Home() {
             variants={!reducedMotion ? containerVariants : {}}
             initial="hidden"
             animate={isFeaturesInView ? "visible" : "hidden"}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4"
           >
             {features.map((feature, index) => (
               <motion.div
@@ -574,7 +531,7 @@ export default function Home() {
         }`}
         aria-label="Company statistics and achievements"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto px-4">
           <motion.div
             variants={!reducedMotion ? containerVariants : {}}
             initial="hidden"

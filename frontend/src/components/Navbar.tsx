@@ -3,9 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Menu, X, ShieldCheck, FileText, Briefcase, HelpCircle, 
-  BookOpenCheck, Moon, Sun, Search, Bell, ChevronDown,
-  Globe, Settings, Accessibility, Volume2, VolumeX, Languages,
-  Zap, Star, Award, Users, ArrowRight, Shield
+  BookOpenCheck, Moon, Sun, Search, ChevronDown, Accessibility, Volume2, VolumeX, ArrowRight, Shield
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 
@@ -115,11 +113,11 @@ export default function Navbar({ className = '' }: NavbarProps) {
     }
   ];
 
-  const languages = [
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'rw', name: 'Kinyarwanda', flag: '🇷🇼' }
-  ];
+  // const languages = [
+  //   { code: 'en', name: 'English', flag: '🇺🇸' },
+  //   { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  //   { code: 'rw', name: 'Kinyarwanda', flag: '🇷🇼' }
+  // ];
 
   const isActive = (path: string) => location.pathname === path || 
     (path !== '/' && location.pathname.startsWith(path));
@@ -264,10 +262,10 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <div key={item.to} className="relative">
                 <motion.div
-                  onHoverStart={() => item.dropdown && setActiveDropdown(item.to)}
+                  onHoverStart={() => item && setActiveDropdown(item.to)}
                   onHoverEnd={() => setActiveDropdown(null)}
                 >
                   <Link
@@ -282,7 +280,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                       {item.icon}
                     </span>
                     {item.label}
-                    {item.dropdown && (
+                    {item && (
                       <ChevronDown 
                         size={14} 
                         className={`transition-transform ${
@@ -294,7 +292,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
                   {/* Dropdown Menu */}
                   <AnimatePresence>
-                    {item.dropdown && activeDropdown === item.to && (
+                    {item && activeDropdown === item.to && (
                       <motion.div
                         className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-gray-200 overflow-hidden z-50"
                         variants={dropdownVariants}
@@ -310,7 +308,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                           <p className="text-xs text-gray-600 mt-1">{item.description}</p>
                         </div>
                         <div className="py-2">
-                          {item.dropdown.map((subItem, subIndex) => (
+                          {/* {item.dropdown.map((subItem, subIndex) => (
                             <Link
                               key={subIndex}
                               to={subItem.to}
@@ -321,7 +319,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                               {subItem.label}
                               <ArrowRight size={12} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                             </Link>
-                          ))}
+                          ))} */}
                         </div>
                       </motion.div>
                     )}

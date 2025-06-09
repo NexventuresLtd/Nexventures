@@ -380,7 +380,7 @@ export default function Blog() {
             </h2>
             <div className="relative overflow-hidden rounded-2xl">
               <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4">
-                {featuredPosts.map((post, idx) => (
+                {featuredPosts.map((post) => (
                   <motion.div
                     key={post.id}
                     whileHover={{ scale: 1.02 }}
@@ -607,7 +607,7 @@ export default function Blog() {
         >
           <AnimatePresence mode="wait">
             {currentPosts.length > 0 ? (
-              currentPosts.map((post, idx) => (
+              currentPosts.map((post) => (
                 <motion.article
                   key={post.id}
                   variants={itemVariants}
@@ -620,17 +620,19 @@ export default function Blog() {
                   <div className={`relative ${viewMode === "list" ? "md:w-1/3" : ""}`}>
                     {post.videoUrl ? (
                       <div className="relative">
-                        <video
-                          ref={(el) => (videoRefs.current[post.id] = el)}
-                          className="w-full h-64 object-cover"
-                          poster={post.image}
-                          muted={isMuted}
-                          onPlay={() => setIsVideoPlaying(post.id)}
-                          onPause={() => setIsVideoPlaying(null)}
-                        >
-                          <source src={post.videoUrl} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                      <video
+                        ref={(el: HTMLVideoElement | null) => {
+                          videoRefs.current[post.id] = el;
+                        }}
+                        className="w-full h-64 object-cover"
+                        poster={post.image}
+                        muted={isMuted}
+                        onPlay={() => setIsVideoPlaying(post.id)}
+                        onPause={() => setIsVideoPlaying(null)}
+                      >
+                        <source src={post.videoUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                         
                         {/* Video Controls */}
                         <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

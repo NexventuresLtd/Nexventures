@@ -481,7 +481,6 @@ export default function Careers() {
                 className="text-center p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm transition-all duration-300"
               >
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[#952301] to-[#611701] rounded-full flex items-center justify-center">
-                  <value.icon className="text-2xl text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">{value.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{value.description}</p>
@@ -591,7 +590,6 @@ export default function Careers() {
                 onKeyDown={(e) => e.key === 'Enter' && setSelectedJob(idx)}
               >
                 <div className={`w-16 h-16 mb-6 bg-gradient-to-r ${job.color} rounded-xl flex items-center justify-center`}>
-                  <job.icon className="text-2xl text-white" />
                 </div>
                 
                 <div className="flex items-start justify-between mb-4">
@@ -755,7 +753,6 @@ export default function Careers() {
                       className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 transition-all duration-300"
                     >
                       <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-[#952301] to-[#611701] rounded-lg flex items-center justify-center">
-                        <perk.icon className="text-white text-xl" />
                       </div>
                       <h4 className="font-semibold mb-2 text-gray-800 dark:text-white">{perk.text}</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-300">{perk.description}</p>
