@@ -19,8 +19,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [highContrast, setHighContrast] = useState(false);
   const [fontSize, setFontSize] = useState('normal');
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  
+  const [activeDropdown, setActix 
   const location = useLocation();
   const navigate = useNavigate();
   const navbarRef = useRef<HTMLElement>(null);
