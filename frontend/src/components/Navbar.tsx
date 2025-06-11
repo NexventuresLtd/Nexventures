@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Menu, X, ShieldCheck, FileText, Briefcase, HelpCircle, 
-  BookOpenCheck, Moon, Sun, Search, ChevronDown, Accessibility, Volume2, VolumeX, ArrowRight, Shield
+  BookOpenCheck, Moon, Sun, Search, ChevronDown, ArrowRight
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 
@@ -13,13 +13,13 @@ interface NavbarProps {
 
 export default function Navbar({ className = '' }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false); // Using memory storage instead of localStorage
+  const [darkMode, setDarkMode] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [highContrast, setHighContrast] = useState(false);
   const [fontSize, setFontSize] = useState('normal');
-  const [activeDropdown, setActix 
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
   const navbarRef = useRef<HTMLElement>(null);
@@ -60,54 +60,44 @@ export default function Navbar({ className = '' }: NavbarProps) {
       label: 'About', 
       icon: <FileText size={16} />,
       description: 'Our story and mission',
-    //   dropdown: [
-    //     { to: '/about', label: 'Our Team', icon: <Users size={14} /> },
-    //     { to: '/about', label: 'Company History', icon: <Award size={14} /> },
-    //     { to: '/about', label: 'Mission & Vision', icon: <Star size={14} /> }
-    //   ]
+      hasDropdown: false
     },
     { 
       to: '/services', 
       label: 'Services', 
       icon: <Briefcase size={16} />,
       description: 'What we offer',
-    //   dropdown: [
-    //     { to: '/services', label: 'Web Development', icon: <Globe size={14} /> },
-    //     { to: '/services', label: 'IT Consulting', icon: <ShieldCheck size={14} /> },
-    //     { to: '/services', label: 'Support & Maintenance', icon: <Settings size={14} /> }
-    //   ]
+      hasDropdown: false
     },
     { 
       to: '/portfolio', 
       label: 'Portfolio', 
       icon: <BookOpenCheck size={16} />,
-      description: 'Our work showcase'
+      description: 'Our work showcase',
+      hasDropdown: false
     },
     { 
       to: '/blog', 
       label: 'Blog', 
       icon: <FileText size={16} />,
-      description: 'Latest insights'
+      description: 'Latest insights',
+      hasDropdown: false
     },
     { 
       to: '/faqs', 
       label: 'FAQs', 
       icon: <HelpCircle size={16} />,
-      description: 'Common questions'
+      description: 'Common questions',
+      hasDropdown: false
     },
     { 
       to: '/career', 
       label: 'Careers', 
       icon: <ShieldCheck size={16} />,
-      description: 'Join our team'
+      description: 'Join our team',
+      hasDropdown: false
     }
   ];
-
-  // const languages = [
-  //   { code: 'en', name: 'English', flag: '🇺🇸' },
-  //   { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  //   { code: 'rw', name: 'Kinyarwanda', flag: '🇷🇼' }
-  // ];
 
   const isActive = (path: string) => location.pathname === path || 
     (path !== '/' && location.pathname.startsWith(path));
@@ -189,47 +179,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
       initial="hidden"
       animate="visible"
     >
-      {/* Accessibility Banner */}
-      <motion.div
-        className={`bg-[#611701] text-white py-2 px-4 ${fontSize === 'large' ? 'text-sm' : 'text-xs'}`}
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: 'auto', opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-          <div className="flex items-center gap-2">
-            <Accessibility size={16} className="text-[#ec7e5c]" />
-            <span className="font-medium">Accessibility Tools</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={toggleSound}
-              className="flex items-center gap-1 px-2 py-1 rounded bg-[#952301]/20 hover:bg-[#952301]/40 transition-colors focus:outline-none focus:ring-1 focus:ring-[#952301]"
-              aria-label={soundEnabled ? 'Disable sound' : 'Enable sound'}
-            >
-              {soundEnabled ? <Volume2 size={12} /> : <VolumeX size={12} />}
-              <span className="hidden sm:inline text-xs">Sound</span>
-            </button>
-            <button
-              onClick={toggleContrast}
-              className="flex items-center gap-1 px-2 py-1 rounded bg-[#952301]/20 hover:bg-[#952301]/40 transition-colors focus:outline-none focus:ring-1 focus:ring-[#952301]"
-              aria-label="Toggle high contrast"
-            >
-              <Shield size={12} />
-              <span className="hidden sm:inline text-xs">Contrast</span>
-            </button>
-            <button
-              onClick={changeFontSize}
-              className="flex items-center gap-1 px-2 py-1 rounded bg-[#952301]/20 hover:bg-[#952301]/40 transition-colors focus:outline-none focus:ring-1 focus:ring-[#952301]"
-              aria-label="Change font size"
-            >
-              <span className="font-bold text-xs">A</span>
-              <span className="hidden sm:inline text-xs capitalize">{fontSize.replace('-', ' ')}</span>
-            </button>
-          </div>
-        </div>
-      </motion.div>
-
       {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -254,7 +203,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
             {navItems.map((item) => (
               <div key={item.to} className="relative">
                 <motion.div
-                  onHoverStart={() => item && setActiveDropdown(item.to)}
+                  onHoverStart={() => item.hasDropdown && setActiveDropdown(item.to)}
                   onHoverEnd={() => setActiveDropdown(null)}
                 >
                   <Link
@@ -269,7 +218,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                       {item.icon}
                     </span>
                     {item.label}
-                    {item && (
+                    {item.hasDropdown && (
                       <ChevronDown 
                         size={14} 
                         className={`transition-transform ${
@@ -281,7 +230,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
                   {/* Dropdown Menu */}
                   <AnimatePresence>
-                    {item && activeDropdown === item.to && (
+                    {item.hasDropdown && activeDropdown === item.to && (
                       <motion.div
                         className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-gray-200 overflow-hidden z-50"
                         variants={dropdownVariants}
@@ -297,18 +246,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                           <p className="text-xs text-gray-600 mt-1">{item.description}</p>
                         </div>
                         <div className="py-2">
-                          {/* {item.dropdown.map((subItem, subIndex) => (
-                            <Link
-                              key={subIndex}
-                              to={subItem.to}
-                              className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:text-[#952301] hover:bg-[#952301]/5 transition-colors"
-                              onClick={() => setActiveDropdown(null)}
-                            >
-                              <span className="text-[#952301]">{subItem.icon}</span>
-                              {subItem.label}
-                              <ArrowRight size={12} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </Link>
-                          ))} */}
+                          {/* Add dropdown items here if needed */}
                         </div>
                       </motion.div>
                     )}
@@ -320,7 +258,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-3">
-
             {/* CTA Button */}
             <motion.div
               whileHover={{ scale: 1.05 }}
