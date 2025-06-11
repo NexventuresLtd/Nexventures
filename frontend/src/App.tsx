@@ -9,11 +9,23 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Careers from './pages/Careers';
+import { useContext } from 'react';
+import { ThemeContext } from './context/ThemeContext';
 
 export default function App() {
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen relative">
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+          className="fixed top-24 right-6 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 shadow-xl transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-gray-600"
+        >
+          {darkMode ? '🌙' : '☀️'}
+        </button>
+
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

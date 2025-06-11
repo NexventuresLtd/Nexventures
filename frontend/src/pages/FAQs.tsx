@@ -362,7 +362,7 @@ export default function FAQs() {
         )}
       </AnimatePresence>
 
-      <div className="p-4 sm:p-6 lg:p-10 max-w-7xl mx-auto">
+      <div className="p-4 sm:p-6 lg:p-10 max-w-full md:max-w-11/12 mx-auto">
         {/* Header Section */}
         <motion.div
           variants={containerVariants}

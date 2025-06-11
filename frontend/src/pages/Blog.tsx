@@ -365,7 +365,7 @@ export default function Blog() {
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-orange-500 rounded-full opacity-10 animate-ping"></div>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="max-w-full md:max-w-11/12 mx-auto px-6 py-10">
         
         {/* Featured Posts Carousel */}
         {featuredPosts.length > 0 && (

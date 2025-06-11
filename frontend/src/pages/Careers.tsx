@@ -456,7 +456,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-full md:max-w-11/12 mx-auto px-6">
         {/* Company Values */}
         <motion.section 
           className="py-20"

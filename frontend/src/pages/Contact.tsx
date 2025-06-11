@@ -253,7 +253,7 @@ export default function Contact() {
         </div>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-full md:max-w-11/12 mx-auto px-6 py-16">
         
         {/* Contact Information Cards */}
         <motion.div 

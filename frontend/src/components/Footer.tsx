@@ -154,7 +154,7 @@ export default function Footer({ className = '' }: FooterProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+        <div className="max-w-full md:max-w-11/12 mx-auto flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <Accessibility size={20} className="text-[#952301]" />
             <span className="font-medium">Accessibility Options</span>
@@ -195,7 +195,7 @@ export default function Footer({ className = '' }: FooterProps) {
         initial="hidden"
         animate={controls}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-full md:max-w-11/12 mx-auto">
           {/* Newsletter Section */}
           <motion.div
             className="mb-12 text-center"
@@ -451,7 +451,7 @@ export default function Footer({ className = '' }: FooterProps) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-full md:max-w-11/12 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-xs">
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <p>&copy; {new Date().getFullYear()} NexVentures Ltd. All rights reserved.</p>

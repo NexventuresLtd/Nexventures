@@ -226,7 +226,7 @@ export default function Portfolio() {
         </div>
       </motion.div>
 
-      <div className="px-6 py-16 max-w-7xl mx-auto">
+      <div className="px-6 py-16 max-w-full md:max-w-11/12 mx-auto">
         {/* Filter and View Controls */}
         <motion.div 
           className="flex flex-col lg:flex-row justify-between items-center mb-12 gap-6"

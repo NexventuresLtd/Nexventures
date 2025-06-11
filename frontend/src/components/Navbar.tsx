@@ -36,6 +36,8 @@ export default function Navbar({ className = '' }: NavbarProps) {
   const toggleContrast = () => setHighContrast(!highContrast);
   
   const changeFontSize = () => {
+    toggleSound()
+    toggleContrast();
     const sizes = ['normal', 'large', 'extra-large'];
     const currentIndex = sizes.indexOf(fontSize);
     setFontSize(sizes[(currentIndex + 1) % sizes.length]);
@@ -180,7 +182,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
       animate="visible"
     >
       {/* Main Navigation */}
-      <div className="max-w-7xl mx-auto px-4 py-4">
+      <div className="max-w-full md:max-w-11/12 mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
@@ -356,7 +358,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
                 <Link
                   to="/contact"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {setIsOpen(false);changeFontSize()}}
                 >
                   Get Started
                   <ArrowRight size={16} />
