@@ -1,11 +1,12 @@
 // src/components/Navbar.tsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Menu, X, ShieldCheck, FileText, Briefcase, HelpCircle, 
   BookOpenCheck, Moon, Sun, Search, ChevronDown, ArrowRight
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import { ThemeContext } from '../context/ThemeContext';
 
 interface NavbarProps {
   className?: string;
@@ -13,13 +14,16 @@ interface NavbarProps {
 
 export default function Navbar({ className = '' }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [highContrast, setHighContrast] = useState(false);
   const [fontSize, setFontSize] = useState('normal');
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  
+  // Get dark mode state and toggle function from context
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
+  
   const location = useLocation();
   const navigate = useNavigate();
   const navbarRef = useRef<HTMLElement>(null);
@@ -31,7 +35,6 @@ export default function Navbar({ className = '' }: NavbarProps) {
   });
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const toggleDarkMode = () => setDarkMode(!darkMode);
   const toggleSound = () => setSoundEnabled(!soundEnabled);
   const toggleContrast = () => setHighContrast(!highContrast);
   
@@ -170,8 +173,12 @@ export default function Navbar({ className = '' }: NavbarProps) {
       ref={navbarRef}
       className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-lg ${
         isScrolled 
-          ? `bg-white/80 ${darkMode ? 'dark:bg-[#611701]/90' : ''}  border-b border-[#952301]/10`
-          : `bg-white ${darkMode ? 'dark:bg-[#611701]' : ''} `
+          ? darkMode 
+            ? 'bg-gray-900/90 border-b border-gray-700/50'
+            : 'bg-white/80 border-b border-[#952301]/10'
+          : darkMode
+            ? 'bg-gray-900'
+            : 'bg-white'
       } ${
         highContrast ? 'contrast-125' : ''
       } ${
@@ -195,7 +202,11 @@ export default function Navbar({ className = '' }: NavbarProps) {
             >
               <div>
                 <div className="text-[#952301]">NexVentures</div>
-                <div className="text-xs text-gray-500 font-normal -mt-1">Innovation • Growth • Excellence</div>
+                <div className={`text-xs font-normal -mt-1 ${
+                  !darkMode ? 'text-gray-400' : 'text-gray-500'
+                }`}>
+                  Innovation • Growth • Excellence
+                </div>
               </div>
             </Link>
           </motion.div>
@@ -213,7 +224,9 @@ export default function Navbar({ className = '' }: NavbarProps) {
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] group ${
                       isActive(item.to)
                         ? 'text-[#952301] bg-[#952301]/10'
-                        : 'text-gray-700 hover:text-[#952301] hover:bg-[#952301]/5'
+                        : darkMode
+                          ? 'text-gray-300 hover:text-[#952301] hover:bg-[#952301]/10'
+                          : 'text-gray-700 hover:text-[#952301] hover:bg-[#952301]/5'
                     }`}
                   >
                     <span className="transition-transform group-hover:scale-110">
@@ -234,18 +247,28 @@ export default function Navbar({ className = '' }: NavbarProps) {
                   <AnimatePresence>
                     {item.hasDropdown && activeDropdown === item.to && (
                       <motion.div
-                        className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border border-gray-200 overflow-hidden z-50"
+                        className={`absolute top-full left-0 mt-2 w-64 rounded-xl border overflow-hidden z-50 ${
+                          darkMode 
+                            ? 'bg-gray-800 border-gray-700' 
+                            : 'bg-white border-gray-200'
+                        }`}
                         variants={dropdownVariants}
                         initial="hidden"
                         animate="visible"
                         exit="exit"
                       >
-                        <div className="p-3 bg-gradient-to-r from-[#952301]/5 to-[#611701]/5 border-b border-gray-100">
+                        <div className={`p-3 bg-gradient-to-r from-[#952301]/5 to-[#611701]/5 border-b ${
+                          !darkMode ? 'border-gray-700' : 'border-gray-100'
+                        }`}>
                           <h3 className="font-semibold text-[#952301] flex items-center gap-2">
                             {item.icon}
                             {item.label}
                           </h3>
-                          <p className="text-xs text-gray-600 mt-1">{item.description}</p>
+                          <p className={`text-xs mt-1 ${
+                            !darkMode ? 'text-gray-400' : 'text-gray-600'
+                          }`}>
+                            {item.description}
+                          </p>
                         </div>
                         <div className="py-2">
                           {/* Add dropdown items here if needed */}
@@ -260,6 +283,27 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-3">
+            {/* Dark Mode Toggle */}
+            <motion.button
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] ${
+                darkMode
+                  ? 'text-gray-300 hover:text-yellow-400 hover:bg-gray-800'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+              }`}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label={!darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              <motion.div
+                initial={false}
+                animate={{ rotate: !darkMode ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {!darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              </motion.div>
+            </motion.button>
+
             {/* CTA Button */}
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -267,7 +311,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
             >
               <Link
                 to="/contact"
-                className="px-6 py-2 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] flex items-center gap-2"
+                className="px-6 py-2 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] hover:shadow-lg flex items-center gap-2"
               >
                 Get Started
                 <ArrowRight size={16} />
@@ -277,7 +321,11 @@ export default function Navbar({ className = '' }: NavbarProps) {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-[#952301] hover:bg-[#952301]/5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301]"
+            className={`lg:hidden p-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301] ${
+              darkMode
+                ? 'text-gray-300 hover:text-[#952301] hover:bg-gray-800'
+                : 'text-gray-600 hover:text-[#952301] hover:bg-[#952301]/5'
+            }`}
             onClick={toggleMenu}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -297,7 +345,11 @@ export default function Navbar({ className = '' }: NavbarProps) {
       <AnimatePresence>
         {isOpen && (
           <motion.nav
-            className="lg:hidden bg-white border-t border-gray-200 overflow-hidden"
+            className={`lg:hidden border-t overflow-hidden ${
+              darkMode 
+                ? 'bg-gray-900 border-gray-700' 
+                : 'bg-white border-gray-200'
+            }`}
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
@@ -306,13 +358,19 @@ export default function Navbar({ className = '' }: NavbarProps) {
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Search */}
               <form onSubmit={handleSearch} className="relative mb-6">
-                <Search size={18} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <Search size={18} className={`absolute left-3 top-1/2 transform -translate-y-1/2 ${
+                  !darkMode ? 'text-gray-400' : 'text-gray-400'
+                }`} />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#952301]"
+                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#952301] transition-colors ${
+                    darkMode
+                      ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-400'
+                      : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                  }`}
                 />
               </form>
 
@@ -330,14 +388,20 @@ export default function Navbar({ className = '' }: NavbarProps) {
                       className={`flex items-center gap-3 p-3 rounded-lg font-medium transition-colors ${
                         isActive(item.to)
                           ? 'text-[#952301] bg-[#952301]/10'
-                          : 'text-gray-700 hover:text-[#952301] hover:bg-[#952301]/5'
+                          : darkMode
+                            ? 'text-gray-300 hover:text-[#952301] hover:bg-[#952301]/10'
+                            : 'text-gray-700 hover:text-[#952301] hover:bg-[#952301]/5'
                       }`}
                       onClick={() => setIsOpen(false)}
                     >
                       {item.icon}
                       <div>
                         <div>{item.label}</div>
-                        <div className="text-xs text-gray-500">{item.description}</div>
+                        <div className={`text-xs ${
+                          !darkMode ? 'text-gray-400' : 'text-gray-500'
+                        }`}>
+                          {item.description}
+                        </div>
                       </div>
                       <ArrowRight size={16} className="ml-auto" />
                     </Link>
@@ -346,18 +410,29 @@ export default function Navbar({ className = '' }: NavbarProps) {
               </div>
 
               {/* Mobile Actions */}
-              <div className="pt-6 border-t border-gray-200 space-y-4">
+              <div className={`pt-6 border-t space-y-4 ${
+                !darkMode ? 'border-gray-700' : 'border-gray-200'
+              }`}>
                 <button
-                  onClick={toggleDarkMode}
-                  className="flex items-center gap-3 w-full p-3 text-gray-600 hover:text-[#952301] transition-colors"
+                  onClick={toggleTheme}
+                  className={`flex items-center gap-3 w-full p-3 transition-colors rounded-lg ${
+                    darkMode
+                      ? 'text-gray-300 hover:text-yellow-400 hover:bg-gray-800'
+                      : 'text-gray-600 hover:text-[#952301] hover:bg-gray-100'
+                  }`}
                 >
-                  {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-                  {darkMode ? 'Light Mode' : 'Dark Mode'}
+                  <motion.div
+                    animate={{ rotate: !darkMode ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {!darkMode ? <Sun size={20} /> : <Moon size={20} />}
+                  </motion.div>
+                  {!darkMode ? 'Light Mode' : 'Dark Mode'}
                 </button>
 
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium"
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium hover:shadow-lg transition-shadow"
                   onClick={() => {setIsOpen(false);changeFontSize()}}
                 >
                   Get Started

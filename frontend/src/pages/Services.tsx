@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import {
   Code,
@@ -25,6 +25,7 @@ import {
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import CTASection from '../components/AboutUsComp/CTASection';
+import { ThemeContext } from '../context/ThemeContext';
 
 // Primary color palette based on #952301
 const colors = {
@@ -371,7 +372,8 @@ const TestimonialCarousel = () => {
 };
 
 export default function ModernServicesPage() {
-  const darkMode = localStorage.getItem('theme') === 'dark' ? true : false;
+   // Get dark mode state and toggle function from context
+   const { darkMode } = useContext(ThemeContext);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
