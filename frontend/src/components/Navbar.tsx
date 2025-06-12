@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
-  Menu, X, ShieldCheck, FileText, Briefcase, HelpCircle, 
+  Menu, X, FileText, Briefcase, HelpCircle, 
   BookOpenCheck, Moon, Sun, Search, ChevronDown, ArrowRight
 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
@@ -95,13 +95,13 @@ export default function Navbar({ className = '' }: NavbarProps) {
       description: 'Common questions',
       hasDropdown: false
     },
-    { 
-      to: '/career', 
-      label: 'Careers', 
-      icon: <ShieldCheck size={16} />,
-      description: 'Join our team',
-      hasDropdown: false
-    }
+    // { 
+    //   to: '/career', 
+    //   label: 'Careers', 
+    //   icon: <ShieldCheck size={16} />,
+    //   description: 'Join our team',
+    //   hasDropdown: false
+    // }
   ];
 
   const isActive = (path: string) => location.pathname === path || 
