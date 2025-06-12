@@ -37,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ }) => {
                     committed to turning your vision into reality.
                 </p>
 
-                <button className="group inline-flex items-center gap-3 bg-white text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-slate-100 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <button onClick={() => window.location.href = '/blog'} className="group inline-flex items-center gap-3 bg-white text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-slate-100 transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                     <Play className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                     Watch Our Story
                 </button>

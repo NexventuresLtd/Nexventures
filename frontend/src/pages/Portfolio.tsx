@@ -234,9 +234,9 @@ export default function Portfolio() {
           </motion.p>
           
           {/* Floating elements for visual interest */}
-          <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce backdrop-blur-sm" style={{ animationDelay: '0s' }}></div>
-          <div className="absolute bottom-10 right-10 w-16 h-16 bg-white/10 rounded-full animate-bounce backdrop-blur-sm" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-bounce backdrop-blur-sm" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce backdrop-blur-sm max-lg:hidden" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute bottom-10 right-10 w-16 h-16 bg-white/10 rounded-full animate-bounce backdrop-blur-sm max-lg:hidden" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-bounce backdrop-blur-sm max-lg:hidden" style={{ animationDelay: '2s' }}></div>
         </div>
       </motion.div>
 

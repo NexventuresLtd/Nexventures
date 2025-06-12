@@ -1,5 +1,5 @@
-// src/pages/Contact.tsx
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { motion, useInView } from "framer-motion";
@@ -20,8 +20,10 @@ import {
   FaUsers,
   FaLightbulb
 } from "react-icons/fa";
+import CTASection from "../components/AboutUsComp/CTASection";
 
 export default function Contact() {
+  const { darkMode } = useContext(ThemeContext);
   const [formData, setFormData] = useState({ name: "", email: "", message: "", subject: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -185,12 +187,21 @@ export default function Contact() {
     }
   ];
 
+  const bgClass = darkMode 
+    ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100" 
+    : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-800";
+  
+  const cardBgClass = darkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200";
+  const textClass = darkMode ? "text-gray-300" : "text-gray-600";
+  const inputBgClass = darkMode ? "bg-gray-700 text-white border-gray-600" : "bg-white border-gray-300";
+  const borderHoverClass = darkMode ? "hover:border-gray-500" : "hover:border-gray-400";
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-100 min-h-screen"
+      className={`${bgClass} min-h-screen`}
     >
       <Navbar />
       
@@ -271,16 +282,16 @@ export default function Contact() {
                 scale: 1.05,
                 boxShadow: "0 0px 0px rgba(149, 35, 1, 0.1)"
               }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-2xl  transition-all duration-300 border border-gray-200 dark:border-gray-700"
+              className={`${cardBgClass} p-6 rounded-2xl transition-all duration-300 border`}
             >
               <div className="flex items-center mb-4">
                 <info.icon className={`text-3xl ${info.color} mr-3`} />
                 <h3 className="text-lg font-semibold">{info.title}</h3>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 font-medium mb-2">
+              <p className={`${darkMode ? "text-gray-300" : "text-gray-700"} font-medium mb-2`}>
                 {info.content}
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
                 {info.detail}
               </p>
             </motion.div>
@@ -296,13 +307,13 @@ export default function Contact() {
             initial="hidden"
             animate={isFormInView ? "visible" : "hidden"}
             variants={containerVariants}
-            className="bg-white dark:bg-gray-800 p-8 rounded-3xl  border border-gray-200 dark:border-gray-700"
+            className={`${cardBgClass} p-8 rounded-3xl border`}
           >
             <motion.div variants={itemVariants} className="mb-8">
-              <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
+              <h2 className={`text-3xl font-bold mb-4 ${darkMode ? "text-white" : "text-gray-800"}`}>
                 Send Us a Message
               </h2>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className={textClass}>
                 We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
               </p>
             </motion.div>
@@ -317,12 +328,12 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold text-green-600 mb-2">
                   Message Sent Successfully!
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className={textClass}>
                   Thank you for reaching out. We'll get back to you within 24 hours.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 bg-gradient-to-r from-[#952301] to-[#611701] text-white px-6 py-3 rounded-xl  transition-all duration-300"
+                  className="mt-6 bg-gradient-to-r from-[#952301] to-[#611701] text-white px-6 py-3 rounded-xl transition-all duration-300"
                 >
                   Send Another Message
                 </button>
@@ -335,7 +346,7 @@ export default function Contact() {
                 noValidate
               >
                 <motion.div variants={itemVariants}>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                  <label htmlFor="name" className={`block text-sm font-medium mb-2 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
                     Full Name *
                   </label>
                   <input
@@ -346,12 +357,12 @@ export default function Contact() {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
-                    className={`w-full p-4 border-2 rounded-xl transition-all duration-300 dark:bg-gray-700 dark:text-white ${
+                    className={`w-full p-4 border-2 rounded-xl transition-all duration-300 ${inputBgClass} ${
                       errors.name 
                         ? 'border-red-500 focus:border-red-500' 
                         : focusedField === 'name'
                         ? 'border-[#952301]'
-                        : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
+                        : `${borderHoverClass}`
                     }`}
                     placeholder="Enter your full name"
                     required
@@ -365,7 +376,7 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                  <label htmlFor="email" className={`block text-sm font-medium mb-2 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
                     Email Address *
                   </label>
                   <input
@@ -376,12 +387,12 @@ export default function Contact() {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
-                    className={`w-full p-4 border-2 rounded-xl transition-all duration-300 dark:bg-gray-700 dark:text-white ${
+                    className={`w-full p-4 border-2 rounded-xl transition-all duration-300 ${inputBgClass} ${
                       errors.email 
                         ? 'border-red-500 focus:border-red-500' 
                         : focusedField === 'email'
                         ? 'border-[#952301]'
-                        : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
+                        : `${borderHoverClass}`
                     }`}
                     placeholder="Enter your email address"
                     required
@@ -395,7 +406,7 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                  <label htmlFor="subject" className={`block text-sm font-medium mb-2 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
                     Subject *
                   </label>
                   <select
@@ -405,12 +416,12 @@ export default function Contact() {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('subject')}
                     onBlur={() => setFocusedField(null)}
-                    className={`w-full p-4 border-2 rounded-xl transition-all duration-300 dark:bg-gray-700 dark:text-white ${
+                    className={`w-full p-4 border-2 rounded-xl transition-all duration-300 ${inputBgClass} ${
                       errors.subject 
                         ? 'border-red-500 focus:border-red-500' 
                         : focusedField === 'subject'
                         ? 'border-[#952301]'
-                        : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
+                        : `${borderHoverClass}`
                     }`}
                     required
                     aria-describedby={errors.subject ? "subject-error" : undefined}
@@ -431,7 +442,7 @@ export default function Contact() {
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                  <label htmlFor="message" className={`block text-sm font-medium mb-2 ${darkMode ? "text-gray-300" : "text-gray-700"}`}>
                     Message *
                   </label>
                   <textarea
@@ -442,12 +453,12 @@ export default function Contact() {
                     onFocus={() => setFocusedField('message')}
                     onBlur={() => setFocusedField(null)}
                     rows={6}
-                    className={`w-full p-4 border-2 rounded-xl transition-all duration-300 dark:bg-gray-700 dark:text-white resize-none ${
+                    className={`w-full p-4 border-2 rounded-xl transition-all duration-300 ${inputBgClass} resize-none ${
                       errors.message 
                         ? 'border-red-500 focus:border-red-500' 
                         : focusedField === 'message'
                         ? 'border-[#952301]'
-                        : 'border-gray-300 dark:border-gray-600 hover:border-gray-400'
+                        : `${borderHoverClass}`
                     }`}
                     placeholder="Tell us about your project or inquiry..."
                     required
@@ -482,7 +493,7 @@ export default function Contact() {
                   )}
                 </motion.button>
 
-                <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+                <p className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"} text-center`}>
                   * Required fields. We respect your privacy and will never share your information.
                 </p>
               </motion.form>
@@ -497,10 +508,10 @@ export default function Contact() {
             className="space-y-8"
           >
             <motion.div variants={itemVariants}>
-              <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+              <h2 className={`text-3xl font-bold mb-6 ${darkMode ? "text-white" : "text-gray-800"}`}>
                 Why Choose NexVentures?
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
+              <p className={`${textClass} text-lg leading-relaxed mb-8`}>
                 We're more than just a technology company. We're your partners in innovation, 
                 committed to delivering solutions that drive real business value.
               </p>
@@ -511,16 +522,16 @@ export default function Contact() {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ x: 10 }}
-                className="flex items-start space-x-4 p-6 bg-white dark:bg-gray-800 rounded-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+                className={`flex items-start space-x-4 p-6 ${cardBgClass} rounded-2xl transition-all duration-300 border`}
               >
                 <div className="flex-shrink-0">
                   <reason.icon className="text-3xl text-[#952301]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
+                  <h3 className={`text-xl font-semibold mb-2 ${darkMode ? "text-white" : "text-gray-800"}`}>
                     {reason.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className={textClass}>
                     {reason.description}
                   </p>
                 </div>
@@ -581,10 +592,10 @@ export default function Contact() {
           className="mb-16"
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800 dark:text-white">
+            <h2 className={`text-4xl font-bold mb-4 ${darkMode ? "text-white" : "text-gray-800"}`}>
               Visit Our Office
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className={`text-xl ${textClass} max-w-2xl mx-auto`}>
               Located in the heart of Kigali, we're easily accessible and always 
               ready to welcome you for a face-to-face conversation.
             </p>
@@ -650,7 +661,7 @@ export default function Contact() {
           </motion.div>
         </motion.div>
       </div>
-      
+      <CTASection darkMode={darkMode} />
       <Footer />
     </motion.section>
   );

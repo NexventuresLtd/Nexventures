@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { motion } from "framer-motion";
-import { 
-  FaSearch, 
+import {
+  FaSearch,
   FaFilter,
   FaTimes,
   FaWindows,
@@ -11,12 +11,12 @@ import {
 import { ThemeContext } from "../context/ThemeContext";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { 
-  blogPosts, 
+import {
+  blogPosts,
   categories,
   BlogPostsGrid,
 } from "../components/BlogComp/BlogPosts";
-import { 
+import {
   NewsletterSection,
   QuickStatsSection,
   PaginationControls,
@@ -41,7 +41,7 @@ export default function Blog() {
   const [isVideoPlaying, setIsVideoPlaying] = useState<number | null>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  
+
   const postsPerPage = viewMode === "grid" ? 6 : 4;
   const videoRefs = useRef<{ [key: number]: HTMLVideoElement | null }>({});
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -203,16 +203,29 @@ export default function Blog() {
       className={`${darkMode ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100' : 'bg-gradient-to-br from-slate-200 via-white to-slate-300 text-gray-800'} min-h-screen`}
     >
       <Navbar />
-      
+
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative bg-gradient-to-r from-orange-900 via-orange-800 to-orange-700 text-white py-20 px-6 overflow-hidden"
+        className="relative text-white py-20 px-6 overflow-hidden"
       >
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto text-center">
+        {/* Background Image with Blur */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm"
+          style={{
+            backgroundImage: "url('https://blog-assets.solidworks.com/uploads/sites/2/2021/09/accelerate_image-scaled.jpg')"
+          }}
+        ></div>
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-orange-800/70 to-slate-700/80"></div>
+
+        {/* Dark Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="relative max-w-4xl mx-auto text-center z-10">
           <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -238,20 +251,20 @@ export default function Blog() {
             {categories.slice(1, 4).map((category, idx) => (
               <span
                 key={idx}
-                className="px-4 py-2 bg-orange-700 bg-opacity-20 rounded-full text-sm font-medium backdrop-blur-sm"
+                className="px-4 py-2 bg-orange-700 bg-opacity-20 rounded-full text-sm font-medium backdrop-blur-sm border border-orange-400/20"
               >
                 {category}
               </span>
             ))}
           </motion.div>
         </div>
-        
+
         {/* Animated background elements */}
         <div className="absolute top-10 left-10 w-20 h-20 bg-orange-400 rounded-full opacity-10 animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-32 h-32 bg-orange-300 rounded-full opacity-10 animate-bounce"></div>
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-orange-500 rounded-full opacity-10 animate-ping"></div>
       </motion.div>
-            {/** space */}
+      {/** space */}
       <div className="h-16 bg-transparent"></div>
       {/* Quick Stats Section */}
       <QuickStatsSection />
@@ -265,7 +278,7 @@ export default function Blog() {
           className="py-16 px-6"
         >
           <div className="max-w-full md:max-w-11/12 mx-auto">
-            <FeaturedPostsCarousel 
+            <FeaturedPostsCarousel
               featuredPosts={featuredPosts}
               handleVideoToggle={handleVideoToggle}
             />
@@ -333,21 +346,19 @@ export default function Blog() {
               <div className={`flex ${darkMode ? 'bg-gray-700' : 'bg-gray-100'} rounded-lg p-1`}>
                 <button
                   onClick={() => setViewMode("grid")}
-                  className={`p-2 rounded-md transition-colors ${
-                    viewMode === "grid"
-                      ? "bg-orange-500 text-white"
-                      : `${darkMode ? 'text-gray-300 hover:bg-gray-600' : 'text-gray-600 hover:bg-gray-200'}`
-                  }`}
+                  className={`p-2 rounded-md transition-colors ${viewMode === "grid"
+                    ? "bg-orange-500 text-white"
+                    : `${darkMode ? 'text-gray-300 hover:bg-gray-600' : 'text-gray-600 hover:bg-gray-200'}`
+                    }`}
                 >
                   <FaWindows />
                 </button>
                 <button
                   onClick={() => setViewMode("list")}
-                  className={`p-2 rounded-md transition-colors ${
-                    viewMode === "list"
-                      ? "bg-orange-500 text-white"
-                      : `${darkMode ? 'text-gray-300 hover:bg-gray-600' : 'text-gray-600 hover:bg-gray-200'}`
-                  }`}
+                  className={`p-2 rounded-md transition-colors ${viewMode === "list"
+                    ? "bg-orange-500 text-white"
+                    : `${darkMode ? 'text-gray-300 hover:bg-gray-600' : 'text-gray-600 hover:bg-gray-200'}`
+                    }`}
                 >
                   <FaList />
                 </button>
@@ -378,11 +389,10 @@ export default function Blog() {
                   <button
                     key={tag}
                     onClick={() => toggleTag(tag)}
-                    className={`px-3 py-1 rounded-full text-sm transition-colors ${
-                      selectedTags.includes(tag)
-                        ? "bg-orange-500 text-white"
-                        : `${darkMode ? 'bg-gray-600 text-gray-300 hover:bg-gray-500' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`
-                    }`}
+                    className={`px-3 py-1 rounded-full text-sm transition-colors ${selectedTags.includes(tag)
+                      ? "bg-orange-500 text-white"
+                      : `${darkMode ? 'bg-gray-600 text-gray-300 hover:bg-gray-500' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`
+                      }`}
                   >
                     {tag}
                   </button>

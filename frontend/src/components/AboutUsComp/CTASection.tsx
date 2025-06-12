@@ -152,7 +152,7 @@ const CTASection: React.FC<CTASectionProps> = ({ darkMode }) => {
                             style={{ backgroundColor: colors.primary }}
                             onMouseEnter={() => setHoveredButton('primary')}
                             onMouseLeave={() => setHoveredButton(null)}
-                            onClick={() => window.location.href = '/blog'}
+                            onClick={() => window.location.href = '/contact'}
                         >
                             {/* Hover effect */}
                             <div 

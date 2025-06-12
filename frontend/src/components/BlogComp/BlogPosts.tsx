@@ -18,10 +18,10 @@ import {
   FaExpand,
   FaCompress,
   FaTimes,
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaCopy
+//   FaFacebook,
+//   FaTwitter,
+//   FaLinkedin,
+//   FaCopy
 } from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext";
 
@@ -186,23 +186,23 @@ const BlogPostModal: React.FC<BlogPostModalProps> = ({ post, onClose }) => {
   
   if (!post) return null;
 
-  const handleShare = (platform: string) => {
-    const url = encodeURIComponent(window.location.href);
-    const title = encodeURIComponent(post.title);
+//   const handleShare = (platform: string) => {
+//     const url = encodeURIComponent(window.location.href);
+//     const title = encodeURIComponent(post.title);
     
-    const shareUrls = {
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-      twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
-    };
+//     const shareUrls = {
+//       facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+//       twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+//       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+//     };
     
-    if (platform === 'copy') {
-      navigator.clipboard.writeText(window.location.href);
-      return;
-    }
+//     if (platform === 'copy') {
+//       navigator.clipboard.writeText(window.location.href);
+//       return;
+//     }
     
-    window.open(shareUrls[platform as keyof typeof shareUrls], '_blank', 'width=600,height=400');
-  };
+//     window.open(shareUrls[platform as keyof typeof shareUrls], '_blank', 'width=600,height=400');
+//   };
 
   return (
     <AnimatePresence>
@@ -289,7 +289,7 @@ const BlogPostModal: React.FC<BlogPostModalProps> = ({ post, onClose }) => {
               </div>
               
               {/* Share Buttons */}
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <span className={`text-sm mr-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Share:</span>
                 <button
                   onClick={() => handleShare('facebook')}
@@ -315,7 +315,7 @@ const BlogPostModal: React.FC<BlogPostModalProps> = ({ post, onClose }) => {
                 >
                   <FaCopy className="text-xs" />
                 </button>
-              </div>
+              </div> */}
             </div>
             
             {/* Tags */}
