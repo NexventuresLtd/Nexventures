@@ -407,7 +407,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onC
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         onClick={(e) => e.stopPropagation()}
-                        className={`relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
+                        className={`relative w-full md:max-w-4xl max-md:text-xs max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
                             }`}
                     >
                         {/* Header */}
@@ -422,8 +422,8 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onC
                                         <Icon size={24} />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">{service.title}</h2>
-                                        <span className={`text-sm px-3 py-1 rounded-full ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
+                                        <h2 className="text-2xl font-bold max-md:text-sm">{service.title}</h2>
+                                        <span className={`text-sm px-3 py-1 rounded-full max-md:text-xs ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'
                                             }`}>
                                             {service.category}
                                         </span>
@@ -441,40 +441,40 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onC
                         {/* Content */}
                         <div className="p-6 space-y-8">
                             {/* Stats Row */}
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 ">
                                 <div className={`text-center p-4 rounded-xl ${darkMode ? 'bg-gray-700' : 'bg-gray-50'
                                     }`}>
                                     <Star className="w-6 h-6 mx-auto mb-2 text-yellow-500" />
-                                    <div className="font-bold text-lg">{service.rating}</div>
-                                    <div className="text-sm opacity-70">Rating</div>
+                                    <div className="font-bold text-lg max-md:text-sm">{service.rating}</div>
+                                    <div className="text-sm opacity-70 max-md:text-xs">Rating</div>
                                 </div>
                                 <div className={`text-center p-4 rounded-xl ${darkMode ? 'bg-gray-700' : 'bg-gray-50'
                                     }`}>
                                     <Clock className="w-6 h-6 mx-auto mb-2 text-blue-500" />
-                                    <div className="font-bold text-lg">{service.duration}</div>
-                                    <div className="text-sm opacity-70">Timeline</div>
+                                    <div className="font-bold text-lg max-md:text-sm">{service.duration}</div>
+                                    <div className="text-sm opacity-70 max-md:text-xs">Timeline</div>
                                 </div>
                                 <div className={`text-center p-4 rounded-xl ${darkMode ? 'bg-gray-700' : 'bg-gray-50'
                                     }`}>
                                     <DollarSign className="w-6 h-6 mx-auto mb-2 text-green-500" />
-                                    <div className="font-bold text-lg">{service.pricing}</div>
-                                    <div className="text-sm opacity-70">Starting Price</div>
+                                    <div className="font-bold text-lg max-md:text-sm">{service.pricing}</div>
+                                    <div className="text-sm opacity-70 max-md:text-xs">Starting Price</div>
                                 </div>
                                 <div className={`text-center p-4 rounded-xl ${darkMode ? 'bg-gray-700' : 'bg-gray-50'
                                     }`}>
                                     <Users className="w-6 h-6 mx-auto mb-2 text-purple-500" />
-                                    <div className="font-bold text-lg">{service.teamSize}</div>
-                                    <div className="text-sm opacity-70">Team Size</div>
+                                    <div className="font-bold text-lg max-md:text-sm">{service.teamSize}</div>
+                                    <div className="text-sm opacity-70 max-md:text-xs">Team Size</div>
                                 </div>
                             </div>
 
                             {/* What is this in plain English */}
                             <div>
-                                <h3 className="text-xl font-bold mb-4 flex items-center">
+                                <h3 className="text-xl font-bold mb-4 flex items-center max-md:text-sm">
                                     <Award className="w-5 h-5 mr-2" style={{ color: colors.primary }} />
                                     What is this in simple terms?
                                 </h3>
-                                <p className={`text-lg leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'
+                                <p className={`text-lg max-md:text-xs leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'
                                     }`}>
                                     {service.plainEnglish}
                                 </p>
@@ -482,7 +482,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onC
 
                             {/* What You Get */}
                             <div>
-                                <h3 className="text-xl font-bold mb-4 flex items-center">
+                                <h3 className="text-xl font-bold mb-4 flex items-center max-md:text-sm">
                                     <CheckCircle className="w-5 h-5 mr-2" style={{ color: colors.primary }} />
                                     What you get with this service:
                                 </h3>
@@ -500,7 +500,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onC
 
                             {/* Perfect For */}
                             <div>
-                                <h3 className="text-xl font-bold mb-4 flex items-center">
+                                <h3 className="text-xl font-bold mb-4 flex items-center max-md:text-sm">
                                     <Users className="w-5 h-5 mr-2" style={{ color: colors.primary }} />
                                     This is perfect for:
                                 </h3>
@@ -521,12 +521,12 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onC
 
                             {/* Technologies */}
                             <div>
-                                <h3 className="text-xl font-bold mb-4">Technologies & Tools We Use:</h3>
+                                <h3 className="text-xl font-bold mb-4 max-md:text-sm">Technologies & Tools We Use:</h3>
                                 <div className="flex flex-wrap gap-3">
                                     {service.technologies.map((tech, index) => (
                                         <span
                                             key={index}
-                                            className={`px-4 py-2 rounded-full font-medium ${darkMode
+                                            className={`px-4 py-2 rounded-full max-md:text-xs font-medium ${darkMode
                                                     ? 'bg-gray-700 text-orange-300 border border-gray-600'
                                                     : 'bg-orange-50 text-orange-600 border border-orange-200'
                                                 }`}
@@ -596,7 +596,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
     return (
         <>
             <section ref={servicesRef} className="py-20 px-4">
-                <div className="max-w-full md:max-w-11/12 mx-auto">
+                <div className="max-w-full md:max-w-11/12 mx-auto overflow-x-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={isServicesInView ? { opacity: 1, y: 0 } : {}}
@@ -616,7 +616,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
                                     }`}
                             />
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex w-full overflow-x-auto items-center space-x-2">
                             <Filter size={20} className="text-gray-400" />
                             {categories.map((category) => (
                                 <button

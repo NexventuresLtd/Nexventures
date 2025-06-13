@@ -91,7 +91,7 @@ const CTASection: React.FC<CTASectionProps> = ({ darkMode }) => {
     );
 
     return (
-        <section className={`relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden ${
+        <section className={`relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden  ${
             darkMode 
                 ? 'bg-gradient-to-br from-gray-900 to-slate-900' 
                 : 'bg-gradient-to-br from-gray-50 to-white'
@@ -116,7 +116,7 @@ const CTASection: React.FC<CTASectionProps> = ({ darkMode }) => {
                     </div>
 
                     {/* Main Heading */}
-                    <h2 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight ${
+                    <h2 className={`text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight ${
                         darkMode ? 'text-white' : 'text-gray-900'
                     }`}>
                         Ready to{' '}
@@ -138,7 +138,7 @@ const CTASection: React.FC<CTASectionProps> = ({ darkMode }) => {
                     </h2>
 
                     {/* Subtitle */}
-                    <p className={`text-xl sm:text-2xl max-w-4xl mx-auto leading-relaxed ${
+                    <p className={`text-sm sm:text-2xl max-w-4xl mx-auto leading-relaxed ${
                         darkMode ? 'text-gray-300' : 'text-gray-600'
                     }`}>
                         Let's collaborate to transform your ideas into powerful digital solutions 
@@ -163,7 +163,7 @@ const CTASection: React.FC<CTASectionProps> = ({ darkMode }) => {
                                 }}
                             />
                             
-                            <span className="relative z-10">Start Your Project</span>
+                            <span className="relative z-10 max-sm:text-xs">Start Your Project</span>
                             <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
 
@@ -183,14 +183,14 @@ const CTASection: React.FC<CTASectionProps> = ({ darkMode }) => {
                         >
                             {/* Hover background */}
                             <div 
-                                className="absolute inset-0 transition-all duration-300"
+                                className="absolute inset-0  transition-all duration-300"
                                 style={{ 
                                     backgroundColor: colors.accent,
                                     transform: `translateX(${hoveredButton === 'secondary' ? '0' : '-100'}%)`,
                                 }}
                             />
                             
-                            <span className="relative z-10">View Our Work</span>
+                            <span className="relative z-10 max-sm:text-xs">View Our Work</span>
                         </button>
                     </div>
 
