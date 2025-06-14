@@ -24,7 +24,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
             category: 'Development',
             description: 'Robust and scalable backend systems that power your applications with enterprise-grade reliability, security, and performance optimization.',
             technologies: ['Node.js', 'Python', 'PHP', 'Django', 'Flask', 'FastAPI', 'Express.js'],
-            projects: '50+ Projects',
+            projects: '10+ Projects',
             rating: 4.9
         },
         {
@@ -33,7 +33,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
             category: 'Development',
             description: 'Dynamic and responsive web applications that provide seamless user experiences with modern frameworks and cutting-edge technologies.',
             technologies: ['React', 'Next.js', 'Vue.js', 'Angular', 'Tailwind CSS', 'Bootstrap'],
-            projects: '55+ Projects',
+            projects: '20+ Projects',
             rating: 4.8
         },
         {
@@ -42,7 +42,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
             category: 'Infrastructure',
             description: 'Efficient data storage and retrieval solutions using modern databases for optimal performance, scalability, and data integrity.',
             technologies: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase', 'Redis', 'SQLite', 'Supabase'],
-            projects: '40+ Projects',
+            projects: '10+ Projects',
             rating: 4.9
         },
         {
@@ -51,7 +51,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
             category: 'Development',
             description: 'Native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android platforms.',
             technologies: ['React Native', 'Flutter', 'iOS', 'Android', 'Firebase'],
-            projects: '30+ Apps',
+            projects: '5+ Apps',
             rating: 4.7
         },
         {
@@ -60,7 +60,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
             category: 'Design',
             description: 'User-centered design that combines aesthetics with functionality, accessibility, and conversion optimization for maximum engagement.',
             technologies: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
-            projects: '60+ Designs',
+            projects: '10+ Designs',
             rating: 4.8
         },
         {
@@ -69,7 +69,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
             category: 'Specialized',
             description: 'Interactive USSD applications for seamless communication and service delivery in low-bandwidth environments across Africa.',
             technologies: ['USSD Gateway', 'Interactive Menus', 'Data Collection', 'Payment Integration'],
-            projects: '25+ Solutions',
+            projects: '5+ Solutions',
             rating: 4.9
         },
         {
@@ -78,7 +78,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
             category: 'Consulting',
             description: 'Strategic consulting and digital transformation services to help businesses grow through data-driven insights and modern technologies.',
             technologies: ['Analytics', 'SEO', 'Marketing', 'Consulting'],
-            projects: '35+ Strategies',
+            projects: '5+ Strategies',
             rating: 4.8
         },
         {
@@ -87,7 +87,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
             category: 'Design',
             description: 'Creative visual solutions including branding, marketing materials, and digital graphics to enhance your brand identity and market presence.',
             technologies: ['Photoshop', 'Illustrator', 'Branding', 'Print Design', 'Social Media', 'Infographics', 'Video Editing', 'Flyer Design'],
-            projects: '200+ Designs',
+            projects: '45+ Designs',
             rating: 4.7
         }
     ];
@@ -244,9 +244,8 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
                                         <button className={`group/btn flex items-center gap-2 text-sm font-bold transition-all duration-300 ${
                                             darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                                         }`}>
-                                            <span>Learn More</span>
-                                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" 
-                                                       style={{ color: colors.accent }} />
+                                            <span  onClick={() => window.location.href = '/services'}>Learn More</span>
+                                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"                              style={{ color: colors.accent }} />
                                         </button>
                                     </div>
                                 </div>
@@ -265,7 +264,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ darkMode }) => {
                                     background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})`,
                                     boxShadow: `0 10px 40px ${colors.primary}30`
                                 }}>
-                            <span className="relative z-10">Start Your Project</span>
+                            <span className="relative z-10" onClick={() => window.location.href = '/contact'}>Start Your Project</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
                             <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                  style={{ 

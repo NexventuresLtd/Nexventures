@@ -25,17 +25,17 @@ interface Project {
 const mockProjects: Project[] = [
     {
         id: 1,
-        title: "Polygon",
+        title: "PrognoSys",
         description: "healthcare management system with AI-driven insights",
         rating: 4.9,
-        reviewCount: 1247,
-        views: 45820,
-        author: "Amuhirwa",
+        reviewCount: 1147,
+        views: 1450,
+        author: "Alain Michael Muhirwa",
         date: "2024-06-10",
         tags: ["AI", "Neural Networks", "Collaboration", "Healthcare"],
         thumbnail: "bg-gradient-to-br from-violet-500 via-purple-500 to-pink-500",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&crop=entropy&auto=format",
-        fullDescription: "Polygon is a cutting-edge healthcare management system that leverages AI-driven insights to optimize patient care and streamline operations. With real-time neural network visualization and collaborative AI model training, it sets a new standard in healthcare technology.",
+        image: "image/prognosys (1).png",
+        fullDescription: "PrognoSys is a cutting-edge healthcare management system that leverages AI-driven insights to optimize patient care and streamline operations. With real-time neural network visualization and collaborative AI model training, it sets a new standard in healthcare technology.",
         features: [
             "AI-driven patient insights",
             "Real-time neural network visualization",
@@ -45,8 +45,8 @@ const mockProjects: Project[] = [
             "Advanced analytics and reporting"
         ],
         techStack: ["React", "Javascript", "Python", "TensorFlow", "git", "PostgreSQL","Django"],
-        demoUrl: "https://demo.example.com",
-        githubUrl: "https://github.com/example/neurosync",
+        demoUrl: "https://prognosys.vercel.app/",
+        githubUrl: "https://prognosys.vercel.app/",
         trending: true
     },
     {
@@ -54,13 +54,13 @@ const mockProjects: Project[] = [
         title: "Afriton",
         description: "Cross Border Payment system uses fingerprint authentication also fingerprint to pay for goods",
         rating: 4.8,
-        reviewCount: 892,
-        views: 32650,
+        reviewCount: 1892,
+        views: 2250,
         author: "Lscblack ",
         date: "2024-06-08",
         tags: ["Analytics", "Quantum UI", "Visualization"],
         thumbnail: "bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=entropy&auto=format",
+        image: "image/afriton (2).png",
         fullDescription: "Afriton is a revolutionary cross-border payment system that integrates advanced fingerprint authentication for secure transactions. It allows users to pay for goods and services seamlessly using their biometric data, ensuring both security and convenience.",
         features: [
             "Fingerprint authentication for secure payments",
@@ -71,8 +71,8 @@ const mockProjects: Project[] = [
             "Advanced fraud detection algorithms"
         ],
         techStack: ["React Js", "Javascript", "Google Auth", "Fastapi", "Git Version", "PostgreSQL","Tailwind CSS"],
-        demoUrl: "https://quantum-dash.example.com",
-        githubUrl: "https://github.com/example/quantum-dashboard",
+        demoUrl: "https://afriton.netlify.app/",
+        githubUrl: "https://afriton.netlify.app/",
         trending: true
     },
     {
@@ -80,13 +80,13 @@ const mockProjects: Project[] = [
         title: "Iga Thrive",
         description: "Online learning platform with AI-driven personalized learning paths",
         rating: 4.7,
-        reviewCount: 654,
-        views: 28930,
-        author: "DIryivuze",
+        reviewCount: 1154,
+        views: 1230,
+        author: "Daniel Iryivuze",
         date: "2024-06-05",
         tags: ["AR/VR", "Social", "Metaverse", "AI", "Education"],
         thumbnail: "bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600",
-        image: "https://kitaboo.com/wp-content/uploads/2022/08/Online-Learning-Platforms.jpg",
+        image: "image/igathrive (2).png",
         fullDescription: "Iga Thrive is an innovative online learning platform that utilizes AI-driven personalized learning paths to enhance the educational experience. It offers a wide range of courses and interactive content, making learning engaging and effective.",
         features: [
             "AI-driven personalized learning paths",
@@ -97,7 +97,7 @@ const mockProjects: Project[] = [
             "Mobile-friendly design"
         ],
         techStack: ["React js", "Javascript", "Node.js", "Fastapi", "Git Version", "PostgreSQL","Tailwind CSS"],
-        demoUrl: "https://metaspace.example.com"
+        demoUrl: "https://igathrive.netlify.app/"
     }
 ];
 

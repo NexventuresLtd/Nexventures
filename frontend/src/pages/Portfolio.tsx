@@ -8,77 +8,100 @@ import CTASection from "../components/AboutUsComp/CTASection";
 
 const allProjects = [
   { 
-    title: "E-commerce Web App", 
-    desc: "Custom online store with MoMo & Stripe checkout, featuring real-time inventory management and advanced analytics.", 
-    img: "https://brokenchalk.org/wp-content/uploads/2021/08/Project-2.png", 
+    title: "Digital Heritage Platform",
+    desc: "A comprehensive platform for cultural heritage management, featuring multilingual support and advanced search capabilities.",
+    img: "image/dhp-platform (1).png", 
     category: "Web",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    duration: "3 months",
-    client: "Retail Startup",
+    tech: ["React","typescript", "Node.js", "MongoDB"],
+    duration: "2 weeks",
+    client: "Elisha Clever",
     challenge: "Integrating multiple payment gateways while maintaining security standards",
     solution: "Implemented microservices architecture with automated testing",
-    results: "40% increase in conversion rate"
+    demo: "https://dhp-platform.netlify.app/"
   },
   { 
-    title: "NGO Branding", 
-    desc: "Complete brand identity for a youth-focused NGO, including logo design, brand guidelines, and marketing materials.", 
-    img: "https://files.selar.co/product-images/2024/products/Viclabulary/project-management-selar.co-65f60d5694847.jpg", 
-    category: "Design",
-    tech: ["Adobe Creative Suite", "Figma", "Brand Strategy"],
-    duration: "2 months",
-    client: "Youth NGO Rwanda",
-    challenge: "Creating a brand that resonates with young people while maintaining professional credibility",
-    solution: "Developed a vibrant yet professional visual identity with cultural elements",
-    results: "300% increase in social media engagement"
+    title: "Afriton", 
+    desc: "Afriton aims to revolutionize cross-border payments in Africa by providing a secure, efficient, and unified payment system that reduces dependency on physical cash.", 
+    img: "image/afriton (2).png", 
+    category: "web",
+    tech: ["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
+    duration: "1 week",
+    client: "Afritonafrica",
+    challenge: "Creating a unified payment system for multiple African countries",
+    solution: "Developed a secure API with multi-currency support and integrated local payment methods",
+    demo: "https://afriton.netlify.app/"
   },
   { 
-    title: "Startup MVP App", 
-    desc: "Flutter-based mobile application with Firebase backend, featuring real-time chat and geolocation services.", 
-    img: "https://brokenchalk.org/wp-content/uploads/2021/08/Project-2.png", 
-    category: "Mobile",
-    tech: ["Flutter", "Firebase", "Google Maps API", "WebRTC"],
-    duration: "4 months",
-    client: "Tech Startup",
-    challenge: "Building a scalable real-time communication platform",
-    solution: "Implemented WebRTC for peer-to-peer communication and Firebase for backend",
-    results: "10K+ downloads in first month"
-  },
-  { 
-    title: "Cloud Dashboard", 
-    desc: "Comprehensive admin dashboard with advanced analytics, CI/CD integration, and multi-tenant architecture.", 
-    img: "https://brokenchalk.org/wp-content/uploads/2021/08/Project-2.png", 
+    title: "Confi-Store", 
+    desc: "At Conf-Store, we believe in the power of books to transform lives, educate minds, and bring people together. Our commitment goes beyond selling books - we're building a literary community in Rwanda.", 
+    img: "image/confi-store (3).png", 
     category: "Web",
-    tech: ["Vue.js", "AWS", "Docker", "Jenkins", "D3.js"],
-    duration: "6 months",
-    client: "Enterprise Client",
-    challenge: "Managing complex data visualization with real-time updates",
-    solution: "Built with micro-frontend architecture and optimized data streaming",
-    results: "50% reduction in operational overhead"
+    tech: ["React", "Redux", "Node.js", "MongoDB"],
+    duration: "2 weeks",
+    client: "TechStore",
+    challenge: "Handling real-time data updates and user authentication",
+    solution: "Implemented WebSocket for real-time updates and JWT for secure authentication",
+    demo: "https://confistore.netlify.app/"
   },
   { 
-    title: "UX Research Project", 
-    desc: "Comprehensive usability testing and UX reporting for a fintech application, including user journey mapping.", 
-    img: "https://brokenchalk.org/wp-content/uploads/2021/08/Project-2.png", 
-    category: "Design",
-    tech: ["User Research", "Figma", "Analytics", "A/B Testing"],
-    duration: "3 months",
-    client: "Fintech Company",
-    challenge: "Improving user onboarding flow and reducing drop-off rates",
-    solution: "Conducted extensive user research and implemented data-driven design changes",
-    results: "60% improvement in user onboarding completion"
+    title: "Iga Thrive", 
+    desc: "IgaThrive empower individuals with professional IT skills and knowledge through comprehensive online courses and practical training programs.", 
+    img: "image/igathrive (2).png", 
+    category: "Web",
+    tech: ["HTML", "CSS", "JavaScript", "React"],
+    duration: "4 weeks",
+    client: "BankCorp",
+    challenge: "Ensuring data security and compliance with financial regulations",
+    solution: "Used end-to-end encryption and implemented multi-factor authentication",
+    demo: "https://igathrive.netlify.app/"
   },
   { 
-    title: "Delivery App UI", 
-    desc: "Modern React Native UI prototype for a food delivery startup with intuitive user experience and accessibility features.", 
-    img: "https://brokenchalk.org/wp-content/uploads/2021/08/Project-2.png", 
-    category: "Mobile",
-    tech: ["React Native", "Expo", "Redux", "Maps API"],
-    duration: "2 months",
-    client: "Food Delivery Startup",
-    challenge: "Creating an intuitive interface for diverse user demographics",
-    solution: "Implemented voice navigation and high-contrast mode for accessibility",
-    results: "95% user satisfaction rate in testing"
+    title: "Eco Track Rwanda",
+    desc: "Eco Track Rwanda is a platform dedicated to promoting environmental sustainability in Rwanda through tracking and reporting eco-friendly initiatives.", 
+    img: "image/eco-track (3).png", 
+    category: "Web",
+    tech: ["HTML", "CSS", "JavaScript"],
+    duration: "1 week",
+    client: "Eco Track Rwanda",
+    challenge: "Creating a responsive design that works across devices",
+    solution: "Utilized CSS Grid and Flexbox for layout and media queries for responsiveness",
+    demo: "https://eco-track-rw.netlify.app/"
   },
+  { 
+    title: "Afiacare",
+    desc: "Afiacare is dedicated to transforming the healthcare system in Cameroon. Our comprehensive digital platform addresses key challenges such as data mismanagement, donor matching, and information sharing between hospitals. ", 
+    img: "image/afiacare (2).png", 
+    category: "Web",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    duration: "3 weeks",
+    client: "Afiacare",
+    challenge: "Integrating a booking system with real-time availability",
+    solution: "Developed a RESTful API for booking management and integrated third-party payment gateways",
+    demo: "https://www.afiacare.tech/"
+  },
+  { 
+    title: "Nova Aid",
+    desc: "Nova Aid is dedicated to transforming the healthcare system by harnessing the power of technology.", 
+    img: "image/nova-aid (9).png", 
+    category: "Web",
+    tech: ["React", "Redux", "Node.js"],
+    duration: "1 weeks",
+    client: "Nova Aid",
+    challenge: "Handling large volumes of data and ensuring fast load times",
+    solution: "Implemented server-side rendering and optimized images for performance",
+    demo: "https://nova-aid.netlify.app/"
+  },
+  { 
+    title: "prognoSys (Healthcare Management System)",
+    desc: "PrognoSys, A revolutionizing healthcare with AI-powered predictions and comprehensive patient management solutions.", 
+    img:"image/prognosys (1).png", 
+    category:"Web",
+    tech:["React","Redux","Node.js","MongoDB"],
+    duration:"2 weeks",
+    client:"HealthCorp",
+    challenge: "Ensuring HIPAA compliance and data security",
+    solution: "Implemented strict access controls, data encryption, and regular security audits",
+    demo: "https://prognosys.vercel.app/"}
 ];
 
 const categories = ["All", "Web", "Mobile", "Design"];
@@ -504,9 +527,14 @@ export default function Portfolio() {
                       
                       <div>
                         <h4 className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'} mb-2`}>Results</h4>
-                        <p className={`text-sm font-medium ${darkMode ? 'text-orange-400' : 'text-orange-500'}`}>
-                          {filteredProjects[selected].results}
-                        </p>
+                        <div className = "flex gap-2 items-center">
+                          <span className="text-sm capitalize">
+                          demo link
+                          </span> 
+                        <a href={filteredProjects[selected].demo} target="_blank" className={`text-sm  font-medium ${darkMode ? 'text-orange-400' : 'text-orange-500'}`}>
+                          {filteredProjects[selected].demo}
+                        </a>
+                        </div>
                       </div>
                     </div>
                   </div>

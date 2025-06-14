@@ -29,7 +29,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ darkMode }) => {
         developers: {
             title: 'Developers',
             icon: Code,
-            count: '12+',
+            count: '15+',
             description: 'Full-stack developers, mobile specialists, and backend architects who turn complex ideas into elegant solutions.',
             skills: ['React/Next.js', 'Node.js', 'Mobile Development', 'Cloud Architecture', 'API Integration', 'DevOps', 'AI/ML','data engineering','python','javascript', 'typescript','database administration'],
             color: colors.primary
@@ -37,7 +37,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ darkMode }) => {
         designers: {
             title: 'Designers',
             icon: Palette,
-            count: '8+',
+            count: '5+',
             description: 'Creative minds who craft beautiful, intuitive user experiences that engage and convert.',
             skills: ['UI/UX Design', 'Brand Identity', 'Motion Graphics', 'User Research','Prototyping', 'Accessibility Design'],
             color: colors.accent
@@ -45,7 +45,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ darkMode }) => {
         strategists: {
             title: 'Strategists',
             icon: Target,
-            count: '6+',
+            count: '5+',
             description: 'Strategic thinkers who align technology solutions with business objectives for maximum impact.',
             skills: ['Digital Strategy', 'Market Analysis', 'Growth Planning', 'Consulting'],
             color: colors.primaryLight
@@ -53,8 +53,8 @@ const TeamSection: React.FC<TeamSectionProps> = ({ darkMode }) => {
     };
 
     const teamStats = [
-        { number: '26+', label: 'Team Members', icon: Users },
-        { number: '2+', label: 'Countries Served', icon: Globe },
+        { number: '25+', label: 'Team Members', icon: Users },
+        { number: '5+', label: 'Countries Served', icon: Globe },
         { number: '5+', label: 'Years Experience', icon: Award },
         { number: '∞', label: 'Coffee Consumed', icon: Coffee }
     ];

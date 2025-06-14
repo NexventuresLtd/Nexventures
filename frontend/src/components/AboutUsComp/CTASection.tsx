@@ -197,7 +197,7 @@ const CTASection: React.FC<CTASectionProps> = ({ darkMode }) => {
                     {/* Stats or Benefits */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 max-w-4xl mx-auto">
                         {[
-                            { number: '500+', label: 'Projects Delivered', icon: Target },
+                            { number: '135+', label: 'Projects Delivered', icon: Target },
                             { number: '98%', label: 'Client Satisfaction', icon: Users },
                             { number: '24/7', label: 'Support Available', icon: Zap }
                         ].map((stat, index) => (

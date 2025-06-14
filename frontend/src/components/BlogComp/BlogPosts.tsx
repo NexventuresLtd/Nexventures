@@ -71,7 +71,7 @@ export const blogPosts = [
     title: "The Rise of Remote Digital Agencies in Africa",
     date: "May 25, 2025",
     summary: "How remote teams like NexVentures are reshaping the tech landscape with cost-effective innovation and global collaboration.",
-    image: "https://media.licdn.com/dms/image/v2/C4E12AQFnBW8_rcEThQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1615197443702?e=2147483647&v=beta&t=bGBxWQDjXyxbzQARUOW6-zMNe0w-6sCN5x3rJnru75I",
+    image: "https://media.licdn.com/dms/image/v2/D4D12AQHSHjV-R--sJQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1716362094435?e=2147483647&v=beta&t=6Kc_gZ90hT43yEhDP-VU0_1elhRdEmwKZkTKXnM5NmA",
     category: "Industry Insight",
     author: "Michael Chen",
     readTime: "8 min read",
@@ -92,11 +92,11 @@ export const blogPosts = [
     title: "Top 5 Tools for Agile Product Development",
     date: "May 18, 2025",
     summary: "A comprehensive breakdown of essential tools for developers and project managers in agile startups and established companies.",
-    image: "https://agilefirst.io/content/images/2023/09/top-agile-project-tools.png",
+    image: "https://cdn.educba.com/academy/wp-content/uploads/2019/06/agile-tool.jpg",
     category: "Productivity",
-    author: "Emily Rodriguez",
+    author: "Emillienne Ndayongeje",
     readTime: "6 min read",
-    views: 1580,
+    views: 180,
     likes: 124,
     comments: 31,
     featured: true,
@@ -113,7 +113,7 @@ export const blogPosts = [
     title: "AI Integration in Modern Web Applications",
     date: "May 10, 2025",
     summary: "Discover how artificial intelligence is transforming user experiences and backend processes in contemporary web development.",
-    image: "https://syndelltech.com/wp-content/uploads/2023/04/AI-in-Web-Development.jpg",
+    image: "https://i0.wp.com/ahex.co/wp-content/uploads/2025/01/Role-of-AI-in-Modern-Web-Development.png?resize=640%2C360&ssl=1",
     category: "Technology",
     author: "David Kim",
     readTime: "10 min read",
@@ -155,7 +155,7 @@ export const blogPosts = [
     title: "The Future of Mobile-First Design",
     date: "April 28, 2025",
     summary: "Exploring next-generation mobile design patterns and their impact on user engagement and conversion rates.",
-    image: "https://www.nebulainfotech.com/insights/wp-content/uploads/2022/03/is-Mobile-First-approach-the-future-in-website-designing.jpg",
+    image: "https://www.convergine.com/images/_1015x450_crop_center-center_none/what-is-mobile-first-design-and-why-is-it-foundation-of-modern-web.png",
     category: "Design",
     author: "Alex Thompson",
     readTime: "9 min read",
@@ -519,7 +519,7 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({
           </span>
         </div>
 
-        <h3 className={`text-xl clip-text line-clamp-1 font-bold mb-4 group-hover:text-gray-700 transition-colors line-clamp-2 ${darkMode ? 'text-white group-hover:text-gray-200' : 'text-gray-900'}`}>
+        <h3 className={`text-xl clip-text font-bold mb-4 group-hover:text-gray-700 transition-colors line-clamp-2 ${darkMode ? 'text-white group-hover:text-gray-200' : 'text-gray-900'}`}>
           {post.title}
         </h3>
 

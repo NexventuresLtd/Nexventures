@@ -12,7 +12,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ }) => {
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-900/85 to-slate-900/95 z-10"></div>
                 <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                    src="https://www.roam.africa/wp-content/uploads/2018/09/ROAM_Tech-1.jpg"
                     alt="Team collaboration"
                     className="w-full h-full object-cover"
                 />
@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ }) => {
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-tight">
                     About{' '}
                     <span className="bg-gradient-to-r from-orange-400 via-red-500 to-red-600 bg-clip-text text-transparent">
-                        NexVentures
+                        Nexventures
                     </span>
                 </h1>
 

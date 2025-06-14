@@ -4,36 +4,36 @@ import { Star, ChevronLeft, ChevronRight, Award, Users, Clock, Zap, Shield, Targ
 import { colors } from './ServicesOffered';
 
 export const stats = [
-    { number: 450, label: 'Projects Completed', icon: Award },
+    { number: 135, label: 'Projects Completed', icon: Award },
     { number: 98, label: 'Client Satisfaction', icon: Star },
-    { number: 120, label: 'Happy Clients', icon: Users },
+    { number: 90, label: 'Happy Clients', icon: Users },
     { number: 24, label: 'Hour Support', icon: Clock }
 ];
 
 export const testimonials = [
     {
-        name: 'Sarah Johnson',
-        company: 'TechCorp Solutions',
+        name: 'Alpha Credo Christelle',
+        company: 'AlphaTech Solutions',
         role: 'CTO',
         rating: 5,
         text: 'Exceptional backend development that scaled our platform to handle millions of users. The team delivered beyond expectations with enterprise-grade security.',
-        avatar: 'SJ'
+        avatar: 'AC'
     },
     {
-        name: 'Michael Chen',
-        company: 'StartupXYZ',
+        name: 'Chancelline Niyotugendana',
+        company: 'Chance for All Foundation',
         role: 'Founder',
         rating: 5,
         text: 'Professional mobile app development with stunning UI/UX design. Our app achieved 4.8+ store ratings thanks to their user-centered approach.',
-        avatar: 'MC'
+        avatar: 'CN'
     },
     {
-        name: 'Emily Davis',
-        company: 'DigitalFlow Agency',
+        name: 'Prof. Eugene Nsanzabiga',
+        company: 'Envibrant visions',
         role: 'Creative Director',
         rating: 5,
         text: 'Outstanding graphic design and branding services. They transformed our visual identity and increased our client engagement by 200%.',
-        avatar: 'ED'
+        avatar: 'EN'
     }
 ];
 
@@ -231,7 +231,7 @@ export const TestimonialsBenefitsStats: React.FC<TestimonialsBenefitsStatsProps>
                             className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent"
                             style={{ backgroundImage: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})` }}
                         >
-                            Why Choose NexVentures?
+                            Why Choose Nexventures?
                         </h2>
                         <p className={`text-xl max-w-3xl mx-auto ${darkMode ? 'text-gray-300' : 'text-gray-600'
                             }`}>

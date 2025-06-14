@@ -16,7 +16,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ darkMode }) => {
     };
 
     const stats = [
-        { number: '150+', label: 'Projects Delivered', icon: CheckCircle },
+        { number: '10+', label: 'Projects Delivered', icon: CheckCircle },
         { number: '5+', label: 'Years Experience', icon: Calendar },
         { number: '98%', label: 'Client Satisfaction', icon: Star },
         { number: '24/7', label: 'Global Support', icon: Globe }

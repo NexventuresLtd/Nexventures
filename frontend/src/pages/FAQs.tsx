@@ -761,7 +761,7 @@ export default function FAQs() {
             >
               <FaEnvelope className="text-3xl mb-3 mx-auto" />
               <h3 className="font-semibold mb-2">Email Us</h3>
-              <p className="text-sm opacity-90">hello@nexventures.rw</p>
+              <p className="text-sm opacity-90">info@nexventures.net</p>
             </motion.div>
 
             <motion.div

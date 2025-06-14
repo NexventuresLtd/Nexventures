@@ -279,8 +279,8 @@ export default function Footer({ className = '' }: FooterProps) {
               {/* Company Stats */}
               <div className="grid grid-cols-3 gap-4 mb-6">
                 {[
-                  { icon: Users, label: 'Clients', value: '500+' },
-                  { icon: Award, label: 'Projects', value: '1000+' },
+                  { icon: Users, label: 'Clients', value: '40+' },
+                  { icon: Award, label: 'Projects', value: '135+' },
                   { icon: Star, label: 'Rating', value: '4.9' }
                 ].map((stat, index) => (
                   <motion.div

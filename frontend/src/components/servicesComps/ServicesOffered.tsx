@@ -51,7 +51,7 @@ export const services = [
             'Any website that needs user accounts and secure data storage'
         ],
         technologies: ['Node.js', 'Python', 'Django', 'Flask', 'FastAPI', 'Express.js', 'PHP'],
-        projects: '50+ Projects',
+        projects: '10+ Projects',
         rating: 4.9,
         duration: '2-8 weeks',
         pricing: 'From $150',
@@ -77,7 +77,7 @@ export const services = [
             'Anyone who wants their website to stand out from competitors'
         ],
         technologies: ['React', 'Next.js', 'Vue.js', 'Angular', 'Tailwind CSS', 'Bootstrap'],
-        projects: '55+ Projects',
+        projects: '20+ Projects',
         rating: 4.8,
         duration: '1-6 weeks',
         pricing: 'From $120',
@@ -103,7 +103,7 @@ export const services = [
             'Organizations needing to analyze business trends'
         ],
         technologies: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase', 'Redis', 'SQLite', 'Supabase'],
-        projects: '40+ Projects',
+        projects: '10+ Projects',
         rating: 4.9,
         duration: '1-4 weeks',
         pricing: 'From $100',
@@ -129,7 +129,7 @@ export const services = [
             'Companies offering location-based services'
         ],
         technologies: ['React Native', 'Flutter', 'iOS', 'Android', 'Firebase'],
-        projects: '30+ Apps',
+        projects: '5+ Apps',
         rating: 4.7,
         duration: '3-12 weeks',
         pricing: 'From $130',
@@ -155,7 +155,7 @@ export const services = [
             'Anyone needing to make a strong first impression online'
         ],
         technologies: ['Figma', 'Adobe XD', 'Prototyping', 'User Research'],
-        projects: '60+ Designs',
+        projects: '10+ Designs',
         rating: 4.8,
         duration: '1-4 weeks',
         pricing: 'From $50',
@@ -181,7 +181,7 @@ export const services = [
             'Government services for citizen information'
         ],
         technologies: ['USSD Gateway', 'Interactive Menus', 'Data Collection', 'Payment Integration'],
-        projects: '25+ Solutions',
+        projects: '5+ Solutions',
         rating: 4.9,
         duration: '2-6 weeks',
         pricing: 'From $130',
@@ -207,7 +207,7 @@ export const services = [
             'Anyone needing guidance on technology decisions'
         ],
         technologies: ['Analytics', 'SEO', 'Marketing', 'Consulting'],
-        projects: '35+ Strategies',
+        projects: '5+ Strategies',
         rating: 4.8,
         duration: '1-3 weeks',
         pricing: 'From $100',
@@ -233,7 +233,7 @@ export const services = [
             'Anyone wanting to improve their professional image'
         ],
         technologies: ['Photoshop', 'Illustrator', 'Branding', 'Print Design', 'Social Media', 'Infographics', 'Video Editing', 'Flyer Design'],
-        projects: '200+ Designs',
+        projects: '50+ Designs',
         rating: 4.7,
         duration: '3-10 days',
         pricing: 'From $4.99',
@@ -259,7 +259,7 @@ export const services = [
             'Anyone needing a comprehensive digital solution'
         ],
         technologies: ['JavaScript', 'TypeScript', 'Node.js', 'React', 'CSS', 'HTML', 'SQL', 'NoSQL', 'Python', 'Django', 'Flask', 'FastAPI', 'Express.js', 'PHP', 'tailwind CSS', 'Bootstrap'],
-        projects: '50+ Projects',
+        projects: '20+ Projects',
         rating: 4.9,
         duration: '4-12 weeks',
         pricing: 'From $199.99',
