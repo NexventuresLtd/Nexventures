@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = async (event) => {
-  const { name, email, phone, subject, message } = JSON.parse(event.body);
+  const { name, email, subject, message } = JSON.parse(event.body);
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -21,7 +21,6 @@ exports.handler = async (event) => {
     text: `
       Name: ${name}
       Email: ${email}
-      Phone: ${phone || "Not provided"}
       Subject: ${subject}
       Message:
       ${message}
