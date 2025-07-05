@@ -115,7 +115,7 @@ export default function Contact() {
 
       const result = await response.json();
       if (result.success) {
-        alert("Thank you for your message! We will get back to you soon.");
+        setSubmitted(true);
         setFormData({
           name: "",
           email: "",
@@ -123,12 +123,11 @@ export default function Contact() {
           message: "",
         });
       } else {
-        alert("Failed to send message: " + result.error);
+        alert("Something went wrong. Please try again.");
       }
     } catch (err) {
       alert("Something went wrong. Try again later.");
     }
-
     setLoading(false);
   };
 
