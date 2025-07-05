@@ -119,7 +119,6 @@ export default function Contact() {
         setFormData({
           name: "",
           email: "",
-          phone: "",
           subject: "",
           message: "",
         });
