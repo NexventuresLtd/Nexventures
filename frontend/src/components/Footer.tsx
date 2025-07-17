@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Mail, Phone, MapPin, Clock, Facebook, Twitter, Linkedin, 
-  ArrowUp, Instagram, Send, Globe, Award, Users, Star, ChevronUp, Shield,
+  ArrowUp, Instagram, Send, Award, Users, Star, ChevronUp, Shield,
   Accessibility, Volume2, VolumeX } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import logo from '../assets/icons (1).png';
