@@ -6,7 +6,7 @@ import {
   ArrowUp, Instagram, Send, Award, Users, Star, ChevronUp, Shield,
   Accessibility, Volume2, VolumeX } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import logo from '../assets/icons (1).png';
+import logo from '../assets/Icon.png';
 
 interface FooterProps {
   className?: string;
@@ -265,7 +265,7 @@ export default function Footer({ className = '' }: FooterProps) {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <img src={logo} className='w-full' alt="logo" />
+                  <img src={logo} className='w-3/4' alt="logo" />
                   {/* <Globe size={24} className="text-white" /> */}
                 </motion.div>
                 <div>
