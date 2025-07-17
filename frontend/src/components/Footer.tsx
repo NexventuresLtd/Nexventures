@@ -6,6 +6,7 @@ import {
   ArrowUp, Instagram, Send, Globe, Award, Users, Star, ChevronUp, Shield,
   Accessibility, Volume2, VolumeX } from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
+import logo from '../assets/icons (1).png';
 
 interface FooterProps {
   className?: string;
@@ -260,11 +261,12 @@ export default function Footer({ className = '' }: FooterProps) {
             >
               <div className="flex items-center gap-3 mb-4">
                 <motion.div
-                  className="w-12 h-12 bg-gradient-to-br from-[#952301] to-[#611701] rounded-xl flex items-center justify-center"
+                  className="w-12 h-12 bg-white rounded-xl flex items-center justify-center"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Globe size={24} className="text-white" />
+                  <img src={logo} className='w-full' alt="logo" />
+                  {/* <Globe size={24} className="text-white" /> */}
                 </motion.div>
                 <div>
                   <h3 className="text-2xl font-bold text-white">NexVentures Ltd</h3>
@@ -318,7 +320,6 @@ export default function Footer({ className = '' }: FooterProps) {
                   { label: "Services", path: "services" },
                   { label: "Portfolio", path: "portfolio" },
                   { label: "Contact", path: "contact" },
-                  { label: "Careers", path: "careers" },
                   { label: "Blog", path: "blog" }
                 ].map((link, index) => (
                   <motion.li
