@@ -545,10 +545,13 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onC
                                     Let's discuss your project and see how we can help you achieve your goals.
                                 </p>
                                 <button
+                                
                                     className="px-6 py-3 rounded-xl text-white font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                                     style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.accent})` }}
                                 >
+                                    <a href="/contact">
                                     Contact Us Now
+                                    </a>
                                 </button>
                             </div>
                         </div>

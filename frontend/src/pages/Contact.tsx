@@ -7,8 +7,9 @@ import {
   FaPhone,
   FaMapMarkerAlt,
   FaEnvelope,
-  FaFacebook,
+  FaInstagram,
   FaTwitter,
+  FaYoutube,
   FaLinkedin,
   FaClock,
   FaCheckCircle,
@@ -157,8 +158,8 @@ export default function Contact() {
     {
       icon: FaMapMarkerAlt,
       title: "Office Location",
-      content: "Kigali, Rwanda – Gasabo District",
-      detail: "KG 7 Ave, Kimisagara",
+      content: "Norrsken House Kigali, Rwanda",
+      detail: "1 KN 78 St, Kigali",
       color: "text-[#952301]",
     },
     {
@@ -171,7 +172,7 @@ export default function Contact() {
     {
       icon: FaEnvelope,
       title: "Email Address",
-      content: "info@Nexventures.net",
+      content: "info@nexventures.net",
       detail: "We respond within 24 hours",
       color: "text-[#952301]",
     },
@@ -642,27 +643,37 @@ export default function Contact() {
               </p>
               <div className="flex space-x-6">
                 <motion.a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  className="text-3xl hover:text-blue-200 transition-colors duration-300"
-                  aria-label="Follow us on Facebook"
-                >
-                  <FaFacebook />
-                </motion.a>
-                <motion.a
-                  href="https://twitter.com"
+                  href="https://www.instagram.com/nexventuresltd/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: -5 }}
                   className="text-3xl hover:text-blue-200 transition-colors duration-300"
-                  aria-label="Follow us on Twitter"
+                  aria-label="Follow us on Instagram"
+                >
+                  <FaInstagram />
+                </motion.a>
+                <motion.a
+                  href="https://www.youtube.com/@nexventuresltd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, rotate: -5 }}
+                  className="text-3xl hover:text-blue-200 transition-colors duration-300"
+                  aria-label="Follow us on Youtube"
+                >
+                  <FaYoutube />
+                </motion.a>
+                <motion.a
+                  href="https://x.com/Nexventuresltd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, rotate: -5 }}
+                  className="text-3xl hover:text-blue-200 transition-colors duration-300"
+                  aria-label="Follow us on X (Twitter)"
                 >
                   <FaTwitter />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/nexventures-ltd/?viewAsMember=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 5 }}
@@ -705,7 +716,7 @@ export default function Contact() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none"></div>
             <iframe
               title="Nexventures Office Location - Kigali, Rwanda"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.5739200979897!2d30.08919401532807!3d-1.944073698592761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6f1d4ddfb01%3A0x0!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1625736540244!5m2!1sen!2srw"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5050469965067!2d30.059993200000008!3d-1.9511718999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca5a86d814c61%3A0x7d3b83e12b1c11a9!2sNorrsken%20House%20Kigali!5e0!3m2!1sen!2srw!4v1752867908885!5m2!1sen!2srw"
               width="100%"
               height="500"
               allowFullScreen
@@ -747,7 +758,7 @@ export default function Contact() {
                 Call Us Now
               </motion.a>
               <motion.a
-                href="mailto:info@Nexventures.net"
+                href="mailto:info@nexventures.net"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 flex items-center"
