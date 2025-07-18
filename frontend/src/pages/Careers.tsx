@@ -142,7 +142,7 @@ const testimonials: Testimonial[] = [
   {
     name: "Clare Uwimana",
     role: "Senior Product Designer",
-    feedback: "NexVentures transformed my career. The mentorship, creative freedom, and inclusive culture helped me grow beyond my expectations. Working here feels like being part of a family that truly cares.",
+    feedback: "Nexventures transformed my career. The mentorship, creative freedom, and inclusive culture helped me grow beyond my expectations. Working here feels like being part of a family that truly cares.",
     image: "/images/team1.jpg",
     rating: 5,
     department: "Design Team"
@@ -498,7 +498,7 @@ export default function Careers() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-[#952301] to-[#611701] bg-clip-text text-transparent">
-            Life at NexVentures
+            Life at Nexventures
           </h2>
           
           <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden">
@@ -710,7 +710,7 @@ export default function Careers() {
                     </ul>
                     
                     <a
-                      href={`mailto:careers@nexventures.rw?subject=Application for ${encodeURIComponent(openings[selectedJob].title)}`}
+                      href={`mailto:careers@Nexventures.rw?subject=Application for ${encodeURIComponent(openings[selectedJob].title)}`}
                       className="block w-full text-center px-8 py-4 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1"
                     >
                       Apply Now
@@ -947,7 +947,7 @@ export default function Careers() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="mailto:careers@nexventures.rw"
+                href="mailto:careers@Nexventures.rw"
                 className="px-8 py-4 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1"
               >
                 <FaEnvelopeOpenText className="inline mr-2" />
@@ -964,7 +964,7 @@ export default function Careers() {
             
             <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                NexVentures is an equal opportunity employer committed to diversity and inclusion.
+                Nexventures is an equal opportunity employer committed to diversity and inclusion.
                 We welcome applications from all qualified candidates regardless of race, gender, age, religion, sexual orientation, or disability status.
               </p>
             </div>

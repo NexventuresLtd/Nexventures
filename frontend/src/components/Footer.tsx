@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Mail, Phone, MapPin, Clock, Facebook, Twitter, Linkedin, 
-  ArrowUp, Instagram, Send, Award, Users, Star, ChevronUp, Shield,
-  Accessibility, Volume2, VolumeX } from 'lucide-react';
+  Mail, Phone, MapPin, Clock, Twitter, Linkedin, 
+  ArrowUp, Instagram, Youtube, Send, Award, Users, Star, ChevronUp, Shield 
+} from 'lucide-react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import logo from '../assets/Icon.png';
 
@@ -16,9 +16,8 @@ export default function Footer({ className = '' }: FooterProps) {
   const [newsletter, setNewsletter] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(true);
-  const [highContrast, setHighContrast] = useState(false);
-  const [fontSize, setFontSize] = useState('normal');
+  const [highContrast] = useState(false);
+  const [fontSize] = useState('normal');
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   const controls = useAnimation();
@@ -63,15 +62,6 @@ export default function Footer({ className = '' }: FooterProps) {
       top: 0,
       behavior: 'smooth'
     });
-  };
-
-  // Accessibility functions
-  const toggleSound = () => setSoundEnabled(!soundEnabled);
-  const toggleContrast = () => setHighContrast(!highContrast);
-  const changeFontSize = () => {
-    const sizes = ['normal', 'large', 'extra-large'];
-    const currentIndex = sizes.indexOf(fontSize);
-    setFontSize(sizes[(currentIndex + 1) % sizes.length]);
   };
 
   // Animation variants
@@ -148,47 +138,6 @@ export default function Footer({ className = '' }: FooterProps) {
         />
       </div>
 
-      {/* Accessibility Controls */}
-      <motion.div
-        className="bg-[#741f05] py-3 px-5 border-b border-[#952301]/10"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="max-w-full md:max-w-11/12 mx-auto flex flex-wrap justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
-            <Accessibility size={20} className="text-[#952301]" />
-            <span className="font-medium">Accessibility Options</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={toggleSound}
-              className="flex items-center gap-2 px-3 py-1 rounded-md bg-[#952301]/20 hover:bg-[#952301]/40 transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301]"
-              aria-label={soundEnabled ? 'Disable sound' : 'Enable sound'}
-            >
-              {soundEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
-              <span className="hidden sm:inline">Sound</span>
-            </button>
-            <button
-              onClick={toggleContrast}
-              className="flex items-center gap-2 px-3 py-1 rounded-md bg-[#952301]/20 hover:bg-[#952301]/40 transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301]"
-              aria-label="Toggle high contrast"
-            >
-              <Shield size={16} />
-              <span className="hidden sm:inline">Contrast</span>
-            </button>
-            <button
-              onClick={changeFontSize}
-              className="flex items-center gap-2 px-3 py-1 rounded-md bg-[#952301]/20 hover:bg-[#952301]/40 transition-colors focus:outline-none focus:ring-2 focus:ring-[#952301]"
-              aria-label="Change font size"
-            >
-              <span className="font-bold">A</span>
-              <span className="hidden sm:inline capitalize">{fontSize}</span>
-            </button>
-          </div>
-        </div>
-      </motion.div>
-
       {/* Main Footer Content */}
       <motion.div
         className="relative z-10 py-12 px-5"
@@ -196,7 +145,7 @@ export default function Footer({ className = '' }: FooterProps) {
         initial="hidden"
         animate={controls}
       >
-        <div className="max-w-full md:max-w-11/12 mx-auto">
+        <div className="max-w-full md:max-w-[91.666667%] mx-auto">
           {/* Newsletter Section */}
           <motion.div
             className="mb-12 text-center"
@@ -265,11 +214,10 @@ export default function Footer({ className = '' }: FooterProps) {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <img src={logo} className='w-3/4' alt="logo" />
-                  {/* <Globe size={24} className="text-white" /> */}
+                  <img src={logo} className='w-3/4' alt="Nexventures Logo" />
                 </motion.div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">NexVentures Ltd</h3>
+                  <h3 className="text-2xl font-bold text-white">Nexventures Ltd</h3>
                   <p className="text-[#faa389] text-sm font-medium">Innovation • Growth • Excellence</p>
                 </div>
               </div>
@@ -316,7 +264,7 @@ export default function Footer({ className = '' }: FooterProps) {
               <ul className="space-y-3">
                 {[
                   { label: "Home", path: "" },
-                  { label: "About Us", path: "about-us" },
+                  { label: "About Us", path: "about" },
                   { label: "Services", path: "services" },
                   { label: "Portfolio", path: "portfolio" },
                   { label: "Contact", path: "contact" },
@@ -326,11 +274,11 @@ export default function Footer({ className = '' }: FooterProps) {
                     key={index}
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
+                    className="group"
                   >
                     <Link
-                      to={`/${link.path}`}
+                      to={link.path === "" ? "/" : `/${link.path}`}
                       className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#952301] rounded px-1 py-1"
-                      tabIndex={0}
                     >
                       <ChevronUp size={12} className="rotate-90 text-[#e6d3cd] opacity-0 group-hover:opacity-100 transition-opacity" />
                       {link.label}
@@ -403,10 +351,10 @@ export default function Footer({ className = '' }: FooterProps) {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { icon: Facebook, label: 'Facebook', href: '#' },
-                    { icon: Twitter, label: 'Twitter', href: '#' },
-                    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-                    { icon: Instagram, label: 'Instagram', href: '#' }
+                    { icon: Twitter, label: 'Twitter', href: 'https://x.com/Nexventuresltd' },
+                    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/nexventures-ltd/?viewAsMember=true' },
+                    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/nexventuresltd/' },
+                    { icon: Youtube, label: 'Youtube', href: 'https://www.youtube.com/@nexventuresltd' }
                   ].map((social, index) => (
                     <motion.a
                       key={index}
@@ -431,7 +379,7 @@ export default function Footer({ className = '' }: FooterProps) {
                     {['Privacy Policy', 'Terms & Conditions', 'Cookie Policy'].map((link, index) => (
                       <Link
                         key={index}
-                        to={`/${link.toLowerCase().replace(/ & | /g, '-')}`}
+                        to={`/${link.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
                         className="block text-xs text-gray-400 hover:text-gray-300 transition-colors focus:outline-none focus:ring-1 focus:ring-[#952301] rounded px-1"
                       >
                         {link}
@@ -452,24 +400,21 @@ export default function Footer({ className = '' }: FooterProps) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
-        <div className="max-w-full md:max-w-11/12 mx-auto">
+        <div className="max-w-full md:max-w-[91.666667%] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-xs">
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <p>&copy; {new Date().getFullYear()} NexVentures Ltd. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Nexventures Ltd. All rights reserved.</p>
               <div className="flex items-center gap-4">
                 <span className="flex items-center gap-1">
                   <Shield size={12} className="text-[#f09276]" />
                   SSL Secured
                 </span>
                 <span className="flex items-center gap-1">
-                  <Accessibility size={12} className="text-[#f3a188]" />
+                  <Shield size={12} className="text-[#f3a188]" />
                   WCAG 2.1 AA Compliant
                 </span>
               </div>
             </div>
-            <p className="text-center">
-              Accessible & inclusive by design — built with care for all users.
-            </p>
           </div>
         </div>
       </motion.div>
@@ -477,10 +422,19 @@ export default function Footer({ className = '' }: FooterProps) {
       {/* Back to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-[#952301] to-[#d87f63] text-white rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#952301] focus:ring-offset-2 ${
-          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-        }`}
-        whileHover={{ scale: 1.1, boxShadow: '0 0 0px rgba(149, 35, 1, 0.5)' }}
+        className="fixed bottom-5 right-24 z-50 w-12 h-12 bg-gradient-to-r from-[#952301] to-[#d87f63] text-white rounded-full flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#952301] focus:ring-offset-2 shadow-lg"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ 
+          opacity: showBackToTop ? 1 : 0,
+          y: showBackToTop ? 0 : 100,
+          pointerEvents: showBackToTop ? 'auto' : 'none'
+        }}
+        transition={{
+          type: 'spring',
+          stiffness: 200,
+          damping: 20
+        }}
+        whileHover={{ scale: 1.1, boxShadow: '0 8px 25px rgba(149, 35, 1, 0.3)' }}
         whileTap={{ scale: 0.9 }}
         aria-label="Back to top"
       >

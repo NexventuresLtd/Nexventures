@@ -70,7 +70,7 @@ export const blogPosts = [
     id: 2,
     title: "The Rise of Remote Digital Agencies in Africa",
     date: "May 25, 2025",
-    summary: "How remote teams like NexVentures are reshaping the tech landscape with cost-effective innovation and global collaboration.",
+    summary: "How remote teams like Nexventures are reshaping the tech landscape with cost-effective innovation and global collaboration.",
     image: "https://media.licdn.com/dms/image/v2/D4D12AQHSHjV-R--sJQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1716362094435?e=2147483647&v=beta&t=6Kc_gZ90hT43yEhDP-VU0_1elhRdEmwKZkTKXnM5NmA",
     category: "Industry Insight",
     author: "Michael Chen",

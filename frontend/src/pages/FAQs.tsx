@@ -59,7 +59,7 @@ const faqSections = [
       {
         id: 3,
         q: "How do I request a quote? / Nakora nte ngo mbone igiciro?",
-        a: "Just fill out our contact form or email hello@nexventures.rw. We typically respond within 24 hours. / Wuzuza ifishi yo ku rubuga cyangwa utwandikire kuri email. Dusubiza mu masaha 24.",
+        a: "Just fill out our contact form or email hello@Nexventures.rw. We typically respond within 24 hours. / Wuzuza ifishi yo ku rubuga cyangwa utwandikire kuri email. Dusubiza mu masaha 24.",
         tags: ["quote", "contact", "pricing"],
         helpful: 52,
         views: 140
@@ -90,7 +90,7 @@ const faqSections = [
       {
         id: 6,
         q: "Can I apply for internships or jobs? / Nshobora kubona akazi cyangwa kwimenyereza?",
-        a: <>Check our <Link to="/careers" className="text-orange-400 hover:text-orange-300 underline font-semibold transition-colors duration-200">Careers</Link> page or email careers@nexventures.rw for current openings. / Reba urupapuro rwa <Link to="/careers" className="text-orange-400 hover:text-orange-300 underline font-semibold transition-colors duration-200">Imirimo</Link>.</>,
+        a: <>Check our <Link to="/careers" className="text-orange-400 hover:text-orange-300 underline font-semibold transition-colors duration-200">Careers</Link> page or email careers@Nexventures.rw for current openings. / Reba urupapuro rwa <Link to="/careers" className="text-orange-400 hover:text-orange-300 underline font-semibold transition-colors duration-200">Imirimo</Link>.</>,
         tags: ["careers", "internships", "jobs"],
         helpful: 33,
         views: 87
@@ -267,7 +267,7 @@ export default function FAQs() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'nexventures-faqs.txt';
+    a.download = 'Nexventures-faqs.txt';
     a.click();
   };
 
@@ -761,7 +761,7 @@ export default function FAQs() {
             >
               <FaEnvelope className="text-3xl mb-3 mx-auto" />
               <h3 className="font-semibold mb-2">Email Us</h3>
-              <p className="text-sm opacity-90">info@nexventures.net</p>
+              <p className="text-sm opacity-90">info@Nexventures.net</p>
             </motion.div>
 
             <motion.div

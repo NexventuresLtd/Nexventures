@@ -175,10 +175,10 @@ export default function Navbar({ className = '' }: NavbarProps) {
         isScrolled 
           ? darkMode 
             ? 'bg-gray-900/90 border-b border-gray-700/50'
-            : 'bg-white/80 border-b border-[#952301]/10'
+            : 'bg-transparent border-b border-[#952301]/10'
           : darkMode
             ? 'bg-gray-900'
-            : 'bg-white'
+            : 'bg-transparent'
       } ${
         highContrast ? 'contrast-125' : ''
       } ${
@@ -201,7 +201,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
               className="flex items-center gap-3 text-2xl font-bold text-[#952301] tracking-tight focus:outline-none focus:ring-2 focus:ring-[#952301] rounded-lg px-2 py-1"
             >
               <div>
-                <div className="text-[#952301]">NexVentures</div>
+                <div className="text-[#952301]">Nexventures</div>
                 <div className={`text-xs font-normal -mt-1 ${
                   !darkMode ? 'text-gray-400' : 'text-gray-500'
                 }`}>
@@ -311,9 +311,9 @@ export default function Navbar({ className = '' }: NavbarProps) {
             >
               <Link
                 to="/contact"
-                className="px-6 py-2 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] hover:shadow-lg flex items-center gap-2"
+                className="px-6 py-2 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] hover:shadow-lg flex items-center gap-2 uppercase"
               >
-                Get Started
+                Contact Us
                 <ArrowRight size={16} />
               </Link>
             </motion.div>

@@ -171,7 +171,7 @@ export default function Contact() {
     {
       icon: FaEnvelope,
       title: "Email Address",
-      content: "info@nexventures.net",
+      content: "info@Nexventures.net",
       detail: "We respond within 24 hours",
       color: "text-[#952301]",
     },
@@ -598,7 +598,7 @@ export default function Contact() {
                   darkMode ? "text-white" : "text-gray-800"
                 }`}
               >
-                Why Choose NexVentures?
+                Why Choose Nexventures?
               </h2>
               <p className={`${textClass} text-lg leading-relaxed mb-8`}>
                 We're more than just a technology company. We're your partners
@@ -704,7 +704,7 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none"></div>
             <iframe
-              title="NexVentures Office Location - Kigali, Rwanda"
+              title="Nexventures Office Location - Kigali, Rwanda"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.5739200979897!2d30.08919401532807!3d-1.944073698592761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6f1d4ddfb01%3A0x0!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1625736540244!5m2!1sen!2srw"
               width="100%"
               height="500"
@@ -730,7 +730,7 @@ export default function Contact() {
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
               Whether you're looking for a project partner, have a question, or
-              want to explore a tech idea—NexVentures is here to listen,
+              want to explore a tech idea—Nexventures is here to listen,
               understand, and deliver exceptional results.
             </p>
             <motion.div
@@ -747,7 +747,7 @@ export default function Contact() {
                 Call Us Now
               </motion.a>
               <motion.a
-                href="mailto:info@nexventures.net"
+                href="mailto:info@Nexventures.net"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 flex items-center"
