@@ -311,7 +311,7 @@ export default function Navbar({ className = '' }: NavbarProps) {
             >
               <Link
                 to="/contact"
-                className="px-6 py-2 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] hover:shadow-lg flex items-center gap-2 uppercase"
+                className="px-6 py-2 bg-gradient-to-r from-[#952301] to-[#611701] text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#952301] hover:shadow-lg flex items-center gap-2"
               >
                 Contact Us
                 <ArrowRight size={16} />
