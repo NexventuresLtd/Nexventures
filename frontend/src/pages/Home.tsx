@@ -60,10 +60,10 @@ export default function Home() {
 
   const getThemeClasses = () => {
     const base = highContrast
-      ? 'bg-white text-black'
+      ? 'bg-black text-black'
       : darkMode
         ? 'bg-gray-900 text-black'
-        : 'bg-white text-gray-900';
+        : 'bg-black text-gray-900';
     const fontClass =
       fontSize === 'large'
         ? 'text-xl'
@@ -116,15 +116,15 @@ export default function Home() {
             highContrast
               ? 'bg-black/90'
               : darkMode
-                ? 'bg-gradient-to-br from-black/80 via-[#611701]/60 to-[#952301]/40'
-                : 'bg-gradient-to-br from-black/70 via-[#611701]/50 to-[#952301]/30'
+                ? 'bg-gradient-to-br from-black/90 via-black/90 to-black/40'
+                : 'bg-gradient-to-br from-black/90 via-black/90 to-black/30'
           }`}
         />
 
         <div className="absolute top-5 right-5 flex gap-2 z-30">
           <button
             onClick={() => setAccessibilityMode(!accessibilityMode)}
-            className="p-3 rounded-full bg-white/90 text-white hover:bg-white/30 transition-all duration-300"
+            className="p-3 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all duration-300"
             title="Accessibility Options"
           >
             <FaAccessibleIcon size={20} />
