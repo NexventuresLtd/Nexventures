@@ -184,10 +184,10 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/about"
+                to="/career"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#952301] to-[#611701] text-white font-semibold hover:shadow-lg transition-all duration-300 group"
               >
-                Connect with us <FaArrowRight />
+                Training Hub <FaArrowRight />
               </Link>
               <Link
                 to="/portfolio"
