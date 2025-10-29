@@ -243,7 +243,7 @@ const trainers: Trainer[] = [
     role: "Senior Software Engineer & Trainer",
     specialization: "Full-Stack Development & AI & BlockChain",
     image: "/team/loue.jpeg",
-    achievements: ["Trained 50+ developers", "5+ years industry experience", "Full-stack & AI specialist", "Blockchain enthusiast", "Open source contributor", "Tech community leader"]
+    achievements: ["Trained 5+ developers", "5+ years industry experience", "Full-stack & AI specialist", "Blockchain enthusiast", "Open source contributor", "Tech community leader"]
   },
 ];
 
@@ -598,14 +598,14 @@ export default function Careers() {
 
           {/* Dynamic Overlay Based on Theme */}
           <div className={`absolute inset-0 transition-all duration-500 ${darkMode
-              ? 'bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-transparent'
-              : 'bg-gradient-to-br from-white/70 via-white/50 to-transparent'
+            ? 'bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-transparent'
+            : 'bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-transparent'
             }`} />
 
           {/* Secondary Overlay for Depth */}
           <div className={`absolute inset-0 transition-all duration-500 ${darkMode
-              ? 'bg-gradient-to-t from-gray-900/70 via-transparent to-gray-900/40'
-              : 'bg-gradient-to-t from-white/60 via-transparent to-white/30'
+            ? 'bg-gradient-to-t from-gray-900/70 via-transparent to-gray-900/40'
+            : 'bg-gradient-to-t from-gray-900/70 via-transparent to-gray-900/40'
             }`} />
         </div>
 
@@ -614,8 +614,8 @@ export default function Careers() {
           {/* Theme-Aware Grid Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className={`absolute inset-0 transition-all duration-500 ${darkMode
-                ? 'bg-[linear-gradient(rgba(149,35,1,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(149,35,1,0.15)_1px,transparent_1px)]'
-                : 'bg-[linear-gradient(rgba(149,35,1,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(149,35,1,0.08)_1px,transparent_1px)]'
+              ? 'bg-[linear-gradient(rgba(149,35,1,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(149,35,1,0.15)_1px,transparent_1px)]'
+              : 'bg-[linear-gradient(rgba(149,35,1,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(149,35,1,0.08)_1px,transparent_1px)]'
               } bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]`} />
           </div>
 
@@ -661,13 +661,13 @@ export default function Careers() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className={`inline-flex items-center gap-2 px-6 py-3 backdrop-blur-sm border rounded-full transition-all duration-500 ${darkMode
-                  ? 'bg-white/10 border-white/20'
-                  : 'bg-black/10 border-black/20'
+                ? 'bg-white/10 border-white/20'
+                : 'bg-black/10 border-black/20'
                 }`}
             >
               <div className={`w-2 h-2 rounded-full animate-pulse transition-colors duration-500 ${darkMode ? 'bg-[#952301]' : 'bg-[#c2410c]'
                 }`} />
-              <span className={`text-sm font-semibold tracking-wide transition-colors duration-500 ${darkMode ? 'text-white' : 'text-gray-900'
+              <span className={`text-sm font-semibold tracking-wide transition-colors duration-500 ${darkMode ? 'text-white' : 'text-white'
                 }`}>
                 NOW HIRING & TRAINING
               </span>
@@ -681,8 +681,8 @@ export default function Careers() {
             >
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight">
                 <span className={`bg-clip-text text-transparent transition-all duration-500 ${darkMode
-                    ? 'bg-gradient-to-r from-white via-orange-50 to-amber-100'
-                    : 'bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700'
+                  ? 'bg-gradient-to-r from-white via-orange-50 to-amber-100'
+                  : 'bg-gradient-to-r from-white via-orange-50 to-amber-100'
                   }`}>
                   Shape Africa's
                 </span>
@@ -700,13 +700,13 @@ export default function Careers() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="max-w-4xl mx-auto"
             >
-              <p className={`text-xl md:text-2xl lg:text-3xl font-light leading-relaxed transition-colors duration-500 ${darkMode ? 'text-white/90' : 'text-gray-800'
+              <p className={`text-xl md:text-2xl lg:text-3xl font-light leading-relaxed transition-colors duration-500 ${darkMode ? 'text-white/90' : 'text-white/90'
                 }`}>
-                Join <span className={`font-semibold transition-colors duration-500 ${darkMode ? 'text-orange-200' : 'text-orange-600'
+                Join <span className={`font-semibold transition-colors duration-500 ${darkMode ? 'text-orange-200' : 'text-orange-200'
                   }`}>Nexventures</span> in empowering the next generation of African tech leaders through{" "}
-                <span className={`font-semibold transition-colors duration-500 ${darkMode ? 'text-orange-200' : 'text-orange-600'
+                <span className={`font-semibold transition-colors duration-500 ${darkMode ? 'text-orange-200' : 'text-orange-200'
                   }`}>innovative training</span> and{" "}
-                <span className={`font-semibold transition-colors duration-500 ${darkMode ? 'text-orange-200' : 'text-orange-600'
+                <span className={`font-semibold transition-colors duration-500 ${darkMode ? 'text-orange-200' : 'text-orange-200'
                   }`}>real-world projects</span>
               </p>
             </motion.div>
@@ -725,11 +725,11 @@ export default function Careers() {
                 { number: "6", label: "Expert Trainers" }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className={`text-2xl md:text-3xl font-bold transition-colors duration-500 ${darkMode ? 'text-white' : 'text-gray-900'
+                  <div className={`text-2xl md:text-3xl font-bold transition-colors duration-500 ${darkMode ? 'text-white' : 'text-white'
                     }`}>
                     {stat.number}
                   </div>
-                  <div className={`text-sm md:text-base font-medium transition-colors duration-500 ${darkMode ? 'text-orange-200/80' : 'text-orange-600/80'
+                  <div className={`text-sm md:text-base font-medium transition-colors duration-500 ${darkMode ? 'text-orange-200/80' : 'text-orange-200/80'
                     }`}>
                     {stat.label}
                   </div>
@@ -778,8 +778,8 @@ export default function Careers() {
                 }}
                 whileTap={{ scale: 0.95 }}
                 className={`group px-10 py-5 border-2 rounded-2xl font-bold text-lg transition-all duration-300 backdrop-blur-sm ${darkMode
-                    ? 'border-white/30 text-white hover:border-white/60 hover:bg-white/10'
-                    : 'border-gray-800/30 text-gray-800 hover:border-gray-800/60 hover:bg-gray-800/10'
+                  ? 'border-white/30 text-white hover:border-white/60 hover:bg-white/10'
+                  : 'border-white/30 text-white hover:border-white/60 hover:bg-white/10'
                   }`}
               >
                 <div className="flex items-center gap-3">
@@ -826,8 +826,8 @@ export default function Careers() {
 
         {/* Bottom Gradient - Theme Aware */}
         <div className={`absolute bottom-0 left-0 right-0 h-32 transition-all duration-500 ${darkMode
-            ? 'bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent'
-            : 'bg-gradient-to-t from-white via-white/50 to-transparent'
+          ? 'bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent'
+          : 'bg-gradient-to-t from-white via-white/50 to-transparent'
           }`} />
       </section>
 
@@ -1023,7 +1023,7 @@ export default function Careers() {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className={`text-center p-8 rounded-2xl backdrop-blur-sm transition-all duration-300 ${getCardBackground()} ${getBorderColor()} border`}
               >
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[#952301] to-[#611701] rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 mx-auto text-white mb-6 bg-gradient-to-br from-[#952301] to-[#611701] rounded-full flex items-center justify-center">
                   <value.icon />
                 </div>
                 <h3 className="text-xl font-bold mb-4">{value.title}</h3>
@@ -1385,7 +1385,7 @@ export default function Careers() {
                       whileHover={{ y: -5, scale: 1.02 }}
                       className={`backdrop-blur-sm rounded-xl p-6 transition-all duration-300 ${getCardBackground()}`}
                     >
-                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-[#952301] to-[#611701] rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br text-white from-[#952301] to-[#611701] rounded-lg flex items-center justify-center">
                         <perk.icon />
                       </div>
                       <h4 className="font-semibold mb-2">{perk.text}</h4>
