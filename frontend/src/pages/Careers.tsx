@@ -109,7 +109,7 @@ const openings: JobOpening[] = [
     requirements: ["5+ years full-stack experience", "React/Node.js proficiency", "Team leadership skills", "Mentorship experience"],
     benefits: ["Health insurance", "Professional development", "Flexible hours", "Stock options"],
     icon: FaLaptopCode,
-    color: "from-blue-500 to-purple-600"
+    color: "from-orange-500 to-red-600"
   },
   {
     title: "AI/ML Engineering Trainer",
@@ -119,7 +119,7 @@ const openings: JobOpening[] = [
     requirements: ["3+ years AI/ML experience", "Python & TensorFlow expertise", "Teaching experience", "Research background"],
     benefits: ["Research opportunities", "Conference attendance", "Mentorship program", "Creative freedom"],
     icon: FaBrain,
-    color: "from-purple-500 to-pink-600"
+    color: "from-red-500 to-orange-600"
   },
   {
     title: "Mobile Development Intern",
@@ -170,7 +170,7 @@ const trainingPrograms: TrainingProgram[] = [
     duration: "6 Months",
     level: "Beginner to Advanced",
     icon: FaCode,
-    color: "from-blue-500 to-purple-600",
+    color: "from-orange-500 to-red-600",
     skills: ["React.js", "Node.js", "MongoDB", "Express.js", "TypeScript", "AWS"]
   },
   {
@@ -179,7 +179,7 @@ const trainingPrograms: TrainingProgram[] = [
     duration: "8 Months",
     level: "Intermediate to Advanced",
     icon: FaBrain,
-    color: "from-purple-500 to-pink-600",
+    color: "from-red-500 to-orange-600",
     skills: ["Python", "TensorFlow", "Neural Networks", "Data Science", "Computer Vision", "NLP"]
   },
   {
